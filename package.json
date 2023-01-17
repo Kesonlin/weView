@@ -1,0 +1,26 @@
+{
+  "name": "weview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "eslint --fix --ext .ts,.vue",
+    "format": "prettier --write --cache ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@weview/eslint-config": "workspace:^0.0.1",
+    "vite": "^4.0.4",
+    "vue": "^3.2.45"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
+    "eslint": "^8.32.0",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.3"
+  }
+}
