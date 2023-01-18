@@ -6,7 +6,8 @@
   "scripts": {
     "prepare": "husky install",
     "lint": "eslint --fix --ext .ts,.vue",
-    "format": "prettier --write --cache ."
+    "format": "prettier --write --cache .",
+    "dev": "pnpm -C play dev"
   },
   "keywords": [],
   "author": "",
@@ -19,8 +20,13 @@
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
+    "@types/node": "^18.11.18",
+    "@types/sass": "^1.43.1",
+    "@vitejs/plugin-vue": "^4.0.0",
     "eslint": "^8.32.0",
     "husky": "^8.0.3",
-    "prettier": "^2.8.3"
+    "prettier": "^2.8.3",
+    "sass": "^1.57.1",
+    "typescript": "^4.9.4"
   }
 }

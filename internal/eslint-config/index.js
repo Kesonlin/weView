@@ -16,7 +16,6 @@ module.exports = {
     'plugin:json/recommended',
     'plugin:vue/vue3-essential',
     'eslint:recommended',
-    '@vue/prettier',
   ],
   plugins: ['@typescript-eslint'],
   parserOptions: {
@@ -25,5 +24,25 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+
+    // vue
+    'vue/no-v-html': 'off',
+    'vue/require-default-prop': 'off',
+    'vue/require-explicit-emits': 'off',
+    'vue/multi-word-component-names': 'off',
+    'vue/prefer-import-from-vue': 'off',
+    'vue/no-v-text-v-html-on-component': 'off',
+    'vue/html-self-closing': [
+      'error',
+      {
+        html: {
+          void: 'always',
+          normal: 'always',
+          component: 'always',
+        },
+        svg: 'always',
+        math: 'always',
+      },
+    ],
   },
 }
