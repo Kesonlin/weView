@@ -8,11 +8,14 @@
     "strict": true, // 启用所有严格类型检查选项
     "sourceMap": true, // 为发出的 JavaScript 文件创建源映射文件
     "resolveJsonModule": true,
-    "isolatedModules": true,
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
-    "typeRoots": ["node_modules/@types", "@types"]
+    "typeRoots": ["node_modules/@types", "@types"],
+    // 单元测试的支持
+    "types": ["vitest/globals"],
+    // 解决测试文件中的 '--isolatedModules'报错
+    "isolatedModules": false
   },
   "include": [
     "global.d.ts",
