@@ -1,0 +1,161 @@
+// 颜色变量
+$--color-primary: #409EFF;
+$--color-white: #FFFFFF;
+$--color-gray: #909399;
+$common-border: 1px solid #ebeef5;
+
+.wv-table {
+  min-width: 291px;
+  border-spacing: 0px 10px !important;
+  & thead {
+    cursor: default;
+  }
+  & div:not(.wv-today-style):hover {
+    color: $--color-primary;
+  }
+
+  .wv-td {
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    height: 38px;
+    width: 38px;
+    font-size: 12px;
+  }
+}
+
+.triangle {
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  translate: -50% 0;
+  width: 0px;
+  height: 0px;
+  border-bottom: 10px solid  white;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+.wv-DatePicker {
+  width: 330px;
+  border: $common-border;
+  box-shadow: 0 0 20px 10px #0000000f;
+
+  &-content {
+    &-left {
+      width: 100%;
+      padding: 16px;
+    }
+
+    &-left {
+      &-top {
+        // display: flex;
+        height: 20px;
+        position: relative;
+        margin-bottom: 10px;
+
+        &-date {
+          cursor: default;
+          position: absolute;
+          left: 15%;
+          margin-left: 50px;
+        }
+
+        &-icon {
+          position: absolute;
+          left: -4px;
+          span {
+            &:hover {
+              color: $--color-primary;
+            }
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+
+    &-right-top-icon {
+      position: absolute;
+      right: 28px;
+      span {
+        &:hover {
+          color: $--color-primary;
+        }
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: right;
+    margin: 10px 0;
+
+    button {
+      border: $common-border;
+      background-color: #fff;
+      color: #409eff;
+      padding: 5px 15px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+  }
+}
+
+.wv-DatePicker-content-left-top-icon,
+.wv-DatePicker-content-right-top-icon {
+  cursor: pointer;
+  user-select: none;
+}
+
+.wv-prev-and-next {
+  color: #a8abb2;
+}
+
+.wv-today-style {
+  color: $--color-primary;
+}
+
+.wv-selected-date {
+  width: 24px;
+  height: 24px;
+  background-color: $--color-primary;
+  color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  line-height: 24px;
+}
+
+// 输入框
+.wv-DatePicker-inputbox {
+    $borderColor: #dcdfe6;
+    border: 2px solid $borderColor;
+    border-radius: 7px;
+    width: 210px;
+    height: 32px;
+    padding: 1px 11px;
+    position: absolute;
+    left: 60px;
+    &:hover {
+        border-color: #a8abb2;
+        transition: 0.35s;
+    }
+    // 选中后属性
+    &:checked {
+        border-color: #409EFF;
+    }
+    .wv-input {
+        width: 200px;
+        height: 30px;
+        border: 0;  // 去除未选中状态边框
+        outline: none; // 去除选中状态边框
+        background-color: rgba(0, 0, 0, 0);// 透明背景
+        // 设置placeholder
+        &::-webkit-input-placeholder {
+            color: #a8abb2;
+            line-height: 2px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+    }
+}

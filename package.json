@@ -25,6 +25,7 @@
     "@types/node": "^18.11.18",
     "@types/sass": "^1.43.1",
     "@vitejs/plugin-vue": "^4.0.0",
+    "@vue/compiler-dom": "^3.2.47",
     "@vue/test-utils": "2.0.2",
     "eslint": "^8.32.0",
     "happy-dom": "^6.0.4",
