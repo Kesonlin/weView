@@ -1,0 +1,72 @@
+Arguments: 
+  D:\Program Files\nodejs\node.exe D:\Program Files\nodejs\node_global\node_modules\yarn\bin\yarn.js add mitt
+
+PATH: 
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\Program Files\Bandizip\;D:\Program Files\nodejs\;D:\Program Files\nodejs\node_global;D:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;D:\Program Files\VSCode\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Roaming\npm
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.18.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.npm.taobao.org/@weview%2feslint-config: Not found
+      at Request.params.callback [as _callback] (D:\Program Files\nodejs\node_global\node_modules\yarn\lib\cli.js:66145:18)
+      at Request.self.callback (D:\Program Files\nodejs\node_global\node_modules\yarn\lib\cli.js:140890:22)
+      at Request.emit (node:events:513:28)
+      at Request.<anonymous> (D:\Program Files\nodejs\node_global\node_modules\yarn\lib\cli.js:141862:10)
+      at Request.emit (node:events:513:28)
+      at IncomingMessage.<anonymous> (D:\Program Files\nodejs\node_global\node_modules\yarn\lib\cli.js:141784:12)
+      at Object.onceWrapper (node:events:627:28)
+      at IncomingMessage.emit (node:events:525:35)
+      at endReadableNT (node:internal/streams/readable:1358:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+npm manifest: 
+  {
+    "name": "weview",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "prepare": "husky install",
+      "lint": "eslint --fix --ext .ts,.vue",
+      "format": "prettier --write --cache .",
+      "dev": "pnpm -C play dev",
+      "test": "vitest"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "@weview/eslint-config": "workspace:^0.0.1",
+      "vite": "^4.0.4",
+      "vue": "^3.2.45"
+    },
+    "devDependencies": {
+      "@commitlint/cli": "^17.4.2",
+      "@commitlint/config-conventional": "^17.4.2",
+      "@testing-library/vue": "^6.6.1",
+      "@types/node": "^18.11.18",
+      "@types/sass": "^1.43.1",
+      "@vitejs/plugin-vue": "^4.0.0",
+      "@vue/test-utils": "2.0.2",
+      "eslint": "^8.32.0",
+      "happy-dom": "^6.0.4",
+      "husky": "^8.0.3",
+      "prettier": "^2.8.3",
+      "sass": "^1.57.1",
+      "typescript": "^4.9.4",
+      "vitest": "^0.25.8"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
