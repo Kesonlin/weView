@@ -1,0 +1,84 @@
+// 颜色变量
+$--color-primary: #409EFF;
+$--color-white: #FFFFFF;
+$--color-font: #505050;
+$common-border: 1px solid #d3d3d3;
+
+.input-primary {
+    display: inline-block;
+
+    input {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 6px 8px;
+        border: $common-border;
+        line-height: 1;
+        font-size: 14px;
+        outline: none;
+        color: $--color-font;
+        border-radius: 5px;
+
+        &:focus {
+            border-color: #409EFF;
+        }
+    }
+}
+
+.input-disabled {
+    input {
+        background-color: $common-border;
+        opacity: 0.8;
+        cursor: no-drop;
+    }
+}
+
+.input-clearable {
+    position: relative;
+
+    .clear-icon {
+        position: absolute;
+        top: 7px;
+        right: 10px;
+        font-size: 12px;
+        opacity: 0.5;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.input-password {
+    position: relative;
+
+    .password-icon {
+        position: absolute;
+        top: 6px;
+        right: 5px;
+        font-size: 12px;
+        opacity: 0.8;
+        user-select: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.input-limit {
+    position: relative;
+    opacity: 1;
+
+    .limit-tag {
+        position: absolute;
+        top: 6px;
+        right: 5px;
+        font-size: 12px;
+        opacity: 0.8;
+        user-select: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
