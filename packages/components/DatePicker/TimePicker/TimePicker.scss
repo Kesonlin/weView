@@ -1,0 +1,142 @@
+$common-border: 1px solid #ebeef5;
+  .wv-TimePicker {
+    position: relative;
+    // 时间选择输入框
+    &-inputbox {
+      $borderColor: #dcdfe6;
+      border: 2px solid $borderColor;
+      border-radius: 7px;
+      width: 116px;
+      height: 26px;
+      padding: 0px 11px;
+      margin-top: 0px;
+      margin-left: 3px;
+      &:hover {
+          border-color: #a8abb2;
+          transition: 0.35s;
+      }
+      // 选中后属性
+      &:checked {
+          border-color: #409EFF;
+      }
+      .wv-TimeInput {
+          width: 120px;
+          height: 28px;
+          border: 0;  // 去除未选中状态边框
+          outline: none; // 去除选中状态边框
+          background-color: rgba(0, 0, 0, 0);// 透明背景
+          // 设置placeholder
+          &::-webkit-input-placeholder {
+              color: #a8abb2;
+              line-height: 8px;
+              font-size: 13px;
+              font-weight: 500;
+          }
+          
+      }
+  }
+}
+.wv-TimeInput {
+    outline: none;
+    border: $common-border;
+    width: 180px;
+  }
+  .wv-outer {
+    position: absolute;
+    top: 40px;
+    left: 5px;
+    background-color: #fff;
+    border: 1px solid #e4e7ed;
+    box-shadow: 0 0 20px 10px #0000000f;
+    z-index: 99;
+  }
+  .wv-time-picker {
+    display: flex;
+    height: 170px;
+    width: 160px;
+    overflow: hidden;
+    border-bottom: 1px solid #e4e7ed;
+  }
+  .wv-footer {
+    display: flex;
+    justify-content: right;
+    margin: 10px 0;
+    &-cancel,
+    &-submit {
+      background-color: #fff;
+      font-size: 12px;
+      margin: 0 5px;
+      cursor: pointer;
+      letter-spacing: 5px;
+    }
+    &-submit {
+      color: #409eff;
+    }
+  }
+  .wv-time-picker::before,
+  .wv-time-picker::after {
+    content: '';
+    top: 40%;
+    position: absolute;
+    margin: -16px 12% 0 12%;
+    height: 32px;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    padding-top: 6px;
+    text-align: left;
+    border-top: 1px solid #e4e7ed;
+    border-bottom: 1px solid #e4e7ed;
+  }
+  .wv-ul {
+    overflow: hidden;
+    scroll-snap-type: y mandatory;
+    flex: 1;
+    padding: 0;
+    margin: 0;
+    z-index: 101;
+    text-align: center;
+  }
+  .wv-ul::-webkit-scrollbar {
+    width: 5px;
+    background-color: none;
+  }
+  .wv-ul::-webkit-scrollbar-thumb {
+    background-color: #eeeeee;
+    border-radius: 10px;
+  }
+  .wv-ul::before,
+  .wv-ul::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 68px;
+  }
+  .wv-ul:hover {
+    overflow-y: auto;
+  }
+  .wv-li {
+    list-style: none;
+    text-align: center;
+    width: 40px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 12px;
+    scroll-snap-align: center;
+    cursor: pointer;
+    user-select: none;
+  }
+
+
+  .triangle {
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    translate: -50% 0;
+    width: 0px;
+    height: 0px;
+    border-bottom: 10px solid  white;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+  }

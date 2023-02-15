@@ -1,19 +1,31 @@
 Arguments: 
+<<<<<<< HEAD
   D:\Program Files\nodejs\node.exe D:\Program Files\nodejs\node_global\node_modules\yarn\bin\yarn.js add mitt
 
 PATH: 
   C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\Program Files\Bandizip\;D:\Program Files\nodejs\;D:\Program Files\nodejs\node_global;D:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;D:\Program Files\VSCode\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Roaming\npm
+=======
+  E:\node\node.exe C:\Users\13542\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add happy-dom --dev
+
+PATH: 
+  C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4\libnvvp;C:\Python310\Scripts\;C:\Python310\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;E:\node\;C:\ProgramData\chocolatey\bin;D:\bandzip\Bandizip\;E:\Git\cmd;E:\mango\bin;E:\c\bin;E:\mingW\bin;E:\Go\bin;E:\anaconda\Library\bin;E:\anaconda\Scripts;E:\anaconda;E:\xshell\;E:\xftp\;C:\Program Files\NVIDIA Corporation\Nsight Compute 2021.2.2\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4\lib\x64;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4\libnvvp;;C:\Program Files\Docker\Docker\resources\bin;C:\Users\13542\AppData\Local\pnpm;E:\code\Demo\emsdk;E:\code\Demo\emsdk\node\14.18.2_64bit\bin;E:\code\Demo\emsdk\upstream\emscripten;C:\Users\13542\AppData\Local\Microsoft\WindowsApps;E:\Microsoft VS Code\bin;C:\Users\13542\AppData\Roaming\npm;E:\mango\bin;C:\Users\13542\go\bin;E:\pycharm\PyCharm 2021.3.3\bin;
+>>>>>>> db437131c0ac486752a60f43a57f15e2807eb7c2
 
 Yarn version: 
   1.22.19
 
 Node version: 
+<<<<<<< HEAD
   16.18.1
+=======
+  18.14.0
+>>>>>>> db437131c0ac486752a60f43a57f15e2807eb7c2
 
 Platform: 
   win32 x64
 
 Trace: 
+<<<<<<< HEAD
   Error: https://registry.npm.taobao.org/@weview%2feslint-config: Not found
       at Request.params.callback [as _callback] (D:\Program Files\nodejs\node_global\node_modules\yarn\lib\cli.js:66145:18)
       at Request.self.callback (D:\Program Files\nodejs\node_global\node_modules\yarn\lib\cli.js:140890:22)
@@ -25,6 +37,19 @@ Trace:
       at IncomingMessage.emit (node:events:525:35)
       at endReadableNT (node:internal/streams/readable:1358:12)
       at processTicksAndRejections (node:internal/process/task_queues:83:21)
+=======
+  Error: https://registry.yarnpkg.com/@weview%2feslint-config: Not found
+      at params.callback [as _callback] (C:\Users\13542\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66145:18)
+      at self.callback (C:\Users\13542\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140890:22)
+      at Request.emit (node:events:513:28)
+      at Request.<anonymous> (C:\Users\13542\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141862:10)
+      at Request.emit (node:events:513:28)
+      at IncomingMessage.<anonymous> (C:\Users\13542\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141784:12)
+      at Object.onceWrapper (node:events:627:28)
+      at IncomingMessage.emit (node:events:525:35)
+      at endReadableNT (node:internal/streams/readable:1359:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+>>>>>>> db437131c0ac486752a60f43a57f15e2807eb7c2
 
 npm manifest: 
   {
@@ -55,6 +80,10 @@ npm manifest:
       "@types/sass": "^1.43.1",
       "@vitejs/plugin-vue": "^4.0.0",
       "@vue/test-utils": "2.0.2",
+<<<<<<< HEAD
+=======
+      "c8": "^7.12.0",
+>>>>>>> db437131c0ac486752a60f43a57f15e2807eb7c2
       "eslint": "^8.32.0",
       "happy-dom": "^6.0.4",
       "husky": "^8.0.3",
