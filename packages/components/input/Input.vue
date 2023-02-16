@@ -3,7 +3,7 @@
         <input type="text" class="input" :value="modelValue" @input="updateValue"
             :placeholder="placeholder" :disabled="disabled" :clearable="clearable"
             :maxlength="maxlength"
-            >
+            />
         <span v-show="clearable && modelValue" class="clear-icon" @click="clearInput">✖</span>
         <span v-show="showPassword && modelValue" class="password-icon" @click="togglePassword">
         🙈</span>
