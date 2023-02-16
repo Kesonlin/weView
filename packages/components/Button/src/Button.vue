@@ -8,9 +8,9 @@
     'is-text': text,
     'is-loading': loading
   }]" @click="handleClick">
-    <i v-if="icon" :class="`one-icon-${icon}`"></i>
+    <i v-if="icon" :class="`one-icon-${icon}`"/>
     <span v-if="$slots.default">
-      <slot></slot>
+      <slot/>
     </span>
   </button>
 </template>

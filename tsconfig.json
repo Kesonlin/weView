@@ -23,5 +23,5 @@
     "packages/**/*.d.ts",
     "packages/**/*.vue",
     "play/main.ts"
-  ]
+, "demo/layout/layoutDemo.vue.ts"  ]
 }
