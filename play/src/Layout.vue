@@ -4,26 +4,26 @@
       <h1>基础</h1>
       <Row>
         <Col :span="24">
-        <div class="grid-content bg-purple-dark"></div>
+        <div class="grid-content bg-purple-dark"/>
         </Col>
       </Row>
       <Row>
         <Col :span="12">
-        <div class="grid-content bg-purple"></div>
+        <div class="grid-content bg-purple"/>
         </Col>
         <Col :span="12">
-        <div class="grid-content bg-purple-light"></div>
+        <div class="grid-content bg-purple-light"/>
         </Col>
       </Row>
       <Row>
         <Col :span="8">
-        <div class="grid-content bg-purple"></div>
+        <div class="grid-content bg-purple"/>
         </Col>
         <Col :span="8">
-        <div class="grid-content bg-purple-light"></div>
+        <div class="grid-content bg-purple-light"/>
         </Col>
         <Col :span="8">
-        <div class="grid-content bg-purple"></div>
+        <div class="grid-content bg-purple"/>
         </Col>
       </Row>
     </div>
@@ -31,16 +31,16 @@
       <h1>分栏间隔</h1>
       <Row :gutter="20">
         <Col :span="6">
-        <div class="grid-content bg-purple"></div>
+        <div class="grid-content bg-purple"/>
         </Col>
         <Col :span="6">
-        <div class="grid-content bg-purple-light"></div>
+        <div class="grid-content bg-purple-light"/>
         </Col>
         <Col :span="6">
-        <div class="grid-content bg-purple"></div>
+        <div class="grid-content bg-purple"/>
         </Col>
         <Col :span="6">
-        <div class="grid-content bg-purple-light"></div>
+        <div class="grid-content bg-purple-light"/>
         </Col>
       </Row>
     </div>

@@ -1,14 +1,13 @@
 <template>
     <div class="x-row">
         <span v-if="$slots.default">
-            <slot :class="[`x-row-${gutter}`]"></slot>
+            <slot :class="[`x-row-${gutter}`]">&nbsp;</slot>
         </span>
     </div>
 </template>
 <script lang="ts">
 
-import { defineComponent, watch, provide, computed, h } from "vue";
-import bus from './utils/bus'
+import { defineComponent, provide, computed, h } from "vue";
 
 export default defineComponent({
     name: 'Row',
@@ -74,6 +73,4 @@ export default defineComponent({
         content: "";
     }
 }
-
-.x-row-20 {}
 </style>

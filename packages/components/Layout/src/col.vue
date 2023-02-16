@@ -1,13 +1,13 @@
 <template>
     <div class="x-col" :class="[`x-col-${span}`, { 'is-gridContent': gridContent }]">
         <div v-if="$slots.default">
-            <slot></slot>
+            <slot/>
         </div>
     </div>
 </template>
 <script lang="ts">
-import { defineComponent, reactive, computed,inject } from "vue";
-import bus from './utils/bus'
+import { defineComponent } from "vue";
+
 export default defineComponent({
     name: 'Col',
     props: {
@@ -29,18 +29,10 @@ export default defineComponent({
         }
     },
     setup() {
-        // let gutters = reactive( {g:0} );
-        // bus.on('gutter', (gutter: any) => {
-        //     gutters.g = gutter
-        //     console.log( gutters.g )
+        // const gutter = computed(() => {
+        //     const gutters = inject('Row')
+        //     console.log(gutters)
         // })
-        // return{
-        //     gutters
-        // }
-        const gutter = computed(() => {
-            const gutters = inject('Row')
-            console.log(gutters)
-        })
     }
 
 })
