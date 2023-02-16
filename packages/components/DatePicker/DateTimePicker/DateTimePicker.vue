@@ -1,8 +1,9 @@
 <template>
-    <div class="wv-DateTimePicker-inputbox" ref="DateTimePickerInputBox">
+    <div class="DateTimePicker-box">
+      <div class="wv-DateTimePicker-inputbox" ref="DateTimePickerInputBox">
       <input type="text" class="wv-input" v-model="DateTimeVal" @click="openDatePicker" placeholder="Select date and time"/>
     </div>
-      <div
+    <div
         class="wv-DatePicker"
         :style="DatePickerStyle"
         v-show="DatePickerPanel"
@@ -75,7 +76,8 @@
             <div class="wv-DateTimePicker-footer-cancel" @click="DateTimeCancel">取消</div>
             <div class="wv-DateTimePicker-footer-submit" @click="DateTimeSubmit">确定</div>
         </div>
-      </div>
+    </div>
+    </div>
   </template>
     
   <script setup lang="ts">
@@ -118,13 +120,14 @@
     top: '',
     left: '',
   });
-  const selectedDateList = ref<number[]>([1661090509502, 1661090509502]);
+  const selectedDateList = ref<number[]>([]);
   
   
   // 打开日期选择器事件
   const openDatePicker = () => {
     // 保存点击前的值（供取消时使用）
     preDateTimeVal.value = DateTimeVal.value!;
+    // 获取inputbox的位置，设置Picker的位置
     const {
       top: inputTop,
       left: inputLeft,
@@ -132,14 +135,13 @@
       bottom: inputBottom,
     } = useElementBounding(DateTimePickerInputBox);
     const { height: panelHeight } = useElementBounding(DatePickerRef);
-  
-    
+
     if (inputBottom.value > panelHeight.value) {
-      DatePickerStyle.value.top = inputTop.value + inputHeight.value + 10 + 'px';
+      DatePickerStyle.value.top = inputHeight.value + 22 + 'px';
     } else {
       DatePickerStyle.value.top = inputTop.value - panelHeight.value - 10 + 'px';
     }
-    DatePickerStyle.value.left = inputLeft.value + 'px';
+    DatePickerStyle.value.left = inputLeft.value - 50 + 'px';
   
     DatePickerPanel.value = true;
   };

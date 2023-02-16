@@ -4,6 +4,11 @@ $--color-white: #FFFFFF;
 $--color-gray: #909399;
 $common-border: 1px solid #ebeef5;
 
+// 最外部盒子
+.DateTimePicker-box {
+ position: relative; 
+}
+
 .wv-table {
   min-width: 291px;
   border-spacing: 0px 10px !important;
@@ -36,6 +41,8 @@ $common-border: 1px solid #ebeef5;
   border-right: 10px solid transparent;
 }
 .wv-DatePicker {
+  background-color: #fff;
+  z-index: 10000;
   width: 330px;
   height: 490px;
   border: $common-border;
@@ -133,7 +140,9 @@ $common-border: 1px solid #ebeef5;
     height: 32px;
     padding: 1px 11px;
     position: absolute;
-    left: 60px;
+    margin: 10px 0 10px 200px;
+  
+    // left: 60px;
     &:hover {
         border-color: #a8abb2;
         transition: 0.35s;
