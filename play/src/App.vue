@@ -1,5 +1,8 @@
 <template>
     <h1>Demo</h1>
+    <!-- Pagination start -->
+    <h3>• Pagination分页</h3>
+    <Pagination />
     <!-- Input组件 start -->
     <h3>• Input输入框</h3>
     <p>(1) 基础样式</p>
@@ -140,6 +143,7 @@ import Notification from '../../packages/components/notification/Notification.vu
 import Input from '../../packages/components/Input/Input.vue'
 import DateTimePicker from '../../packages/components/DatePicker/DateTimePicker/DateTimePicker.vue'
 import Button from '../../packages/components/Button/src/Button.vue'
+import Pagination from '../../demo/Pagination/PagerDemo.vue'
 import '../../packages/fonts/iconfont.css'
 
 
