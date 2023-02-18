@@ -14,7 +14,7 @@
 |Content|string|- | - | 通知内容 | 
 |Type|string|scuess\error\warning\info\none| none | 通知类型 |
 |Position|string|top-right\top-left\bottom-right\bottom-left|top-right |通知位置|
-|Duration|number| - | 4500 | 代表通知持续ms数，当为0时，通知不会自动关闭|
+|Duration|number| - | 4500 | 代表通知将持续多少ms后自动关闭。当为Duration设置为0时，通知不会自动关闭|
 |OffsetY|number| - | 0|通知距离页面横轴距离|
 |OffsetX|number| - | 20|通知距离页面数轴距离|
 |ShowClose|boolean|true\false|true|是否展示关闭按钮|
