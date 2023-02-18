@@ -158,14 +158,16 @@ const inputText2 = ref('');
 const inputText3 = ref('');
 
 // DateTimePicker组件
-let DateTimeValue = ref('')
+let DateTimeValue = ref('123')
 const updateDate = (val) => {
   DateTimeValue.value = val;
+  alert(DateTimeValue.value)
 }
 
 // button组件
 function btnClick() {
-    alert("触发按钮");
+    alert(DateTimeValue.value);
+    
 }
 
 

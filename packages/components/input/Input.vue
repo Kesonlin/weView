@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, computed, onMounted } from 'vue';
+import { computed, onMounted } from 'vue';
 
 interface Props {
     modelValue?: string | number,

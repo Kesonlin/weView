@@ -10,7 +10,7 @@ $common-border: 1px solid #ebeef5;
 }
 
 .wv-table {
-  min-width: 291px;
+  min-width: 430px;
   border-spacing: 0px 10px !important;
   & thead {
     cursor: default;
@@ -43,13 +43,14 @@ $common-border: 1px solid #ebeef5;
 .wv-DatePicker {
   background-color: #fff;
   z-index: 10000;
-  width: 330px;
-  height: 490px;
+  width: 462px;
+  height: 440px;
   border: $common-border;
   box-shadow: 0 0 20px 10px #0000000f;
+  left: 155px;
 
   &-content {
-      width: 300px;
+      width: 462px;
       padding: 16px;
       border-bottom: 1px solid #e4e7ed;
     
@@ -63,13 +64,13 @@ $common-border: 1px solid #ebeef5;
         &-date {
           cursor: default;
           position: absolute;
-          left: 15%;
-          margin-left: 50px;
+          left: 50%;
+          transform: translate(-50%,0);
         }
 
         &-icon {
           position: absolute;
-          left: -4px;
+          left: 30px;
           span {
             &:hover {
               color: $--color-primary;
@@ -81,7 +82,7 @@ $common-border: 1px solid #ebeef5;
 
     &-right-top-icon {
       position: absolute;
-      right: -4px;
+      right: 18px;
       span {
         &:hover {
           color: $--color-primary;
