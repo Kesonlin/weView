@@ -31,12 +31,12 @@ describe('DateTimePicker.vue',() => {
     expect(wrapper.find(".wv-DatePicker").attributes("style")).toBe("position: absolute; display: none;")
     // 点击后选择框才出现
     await wrapper.find('.wv-input').trigger('click');
-    expect(wrapper.find(".wv-DatePicker").attributes("style")).toBe("position: absolute; top: -10px; left: -50px;");
+    expect(wrapper.find(".wv-DatePicker").attributes("style")).toBe("position: absolute; top: -10px;");
     // 点击取消或确定按钮后才消失
     await wrapper.find(".wv-DateTimePicker-footer-cancel").trigger("click");
-    expect(wrapper.find(".wv-DatePicker").attributes("style")).toBe("position: absolute; top: -10px; left: -50px; display: none;")
+    expect(wrapper.find(".wv-DatePicker").attributes("style")).toBe("position: absolute; top: -10px; display: none;")
     await wrapper.find(".wv-DateTimePicker-footer-submit").trigger("click");
-    expect(wrapper.find(".wv-DatePicker").attributes("style")).toBe("position: absolute; top: -10px; left: -50px; display: none;")
+    expect(wrapper.find(".wv-DatePicker").attributes("style")).toBe("position: absolute; top: -10px; display: none;")
 
     // 获取今日日期
     let date = new Date();
