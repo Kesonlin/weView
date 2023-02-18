@@ -137,7 +137,7 @@
 
 <script setup lang="ts">
 import Notification from '../../packages/components/notification/Notification.vue'
-import Input from '../../packages/components/input/Input.vue'
+import Input from '../../packages/components/Input/Input.vue'
 import DateTimePicker from '../../packages/components/DatePicker/DateTimePicker/DateTimePicker.vue'
 import Button from '../../packages/components/Button/src/Button.vue'
 import '../../packages/fonts/iconfont.css'
