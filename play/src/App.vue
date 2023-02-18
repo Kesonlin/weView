@@ -15,11 +15,16 @@
 
     <!-- Notification组件 start -->
     <h3>• Notification通知</h3>
-    <button @click="change">Change</button>
-    <button @click="close">Close</button>
-    <Notification ref=noti :ShowClose=true Title="It is a error" Content="Please restart it" 
-      :Duration=duration :OffsetY=offsetY Type="error" Position="top-right"/>
+    <Button @click="change">Show Notification</Button>
+    <Button @click="close">Close Notification</Button>
+    <Notification ref=noti :ShowClose=true Title="Scuess" Content="Please continue" 
+      :Duration=duration :OffsetY=offsetY Type="scuess" Position="top-right"/>
+    <Notification :ShowClose=true Title="默认通知" Content="这是一个默认通知" 
+    :Duration=0 :OffsetY=150  Position="top-right"/>
+    <Notification  Title="不可关闭" Content="此通知将会在5s后自动关闭" 
+    :Duration=5000   Position="bottom-right"/>
     <!-- Notification组件 end -->
+
     <br/>
 
     <!-- DateTimePicker组件 start -->
