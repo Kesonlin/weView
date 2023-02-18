@@ -162,13 +162,11 @@ const inputText4 = ref('');
 let DateTimeValue = ref('123')
 const updateDate = (val) => {
   DateTimeValue.value = val;
-  alert(DateTimeValue.value)
 }
 
 // button组件
 function btnClick() {
-    alert(DateTimeValue.value);
-    
+    alert('触发按钮');
 }
 
 

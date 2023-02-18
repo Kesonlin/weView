@@ -1,9 +1,11 @@
 <template>
   <div class="DateTimePicker-box">
+      <!-- 顶部最高级input -->
     <div class="wv-DateTimePicker-inputbox" ref="DateTimePickerInputBox">
-    <input type="text" class="wv-input" v-model="DateTimeVal" @click="openDatePicker" placeholder="Select date and time" @input="emits('update:modelValue', DateTimeVal)"/>
-  </div>
-  <div
+      <input type="text" class="wv-input" v-model="DateTimeVal" @click="openDatePicker" placeholder="Select date and time" @input="emits('update:modelValue', DateTimeVal)"/>
+    </div>
+    <!-- 日期时间选择器 -->
+    <div
       class="wv-DatePicker"
       :style="DatePickerStyle"
       v-show="DatePickerPanel"
@@ -76,8 +78,8 @@
           <div class="wv-DateTimePicker-footer-cancel" @click="DateTimeCancel">取消</div>
           <div class="wv-DateTimePicker-footer-submit" @click="DateTimeSubmit">确定</div>
       </div>
+    </div>
   </div>
-</div>
 </template>
   
 <script setup lang="ts">
@@ -96,11 +98,8 @@ import {
   clickPrevOrNext,
 } from './DateTimePicker';
 
-// const props = defineProps({
-//   modelValue: {
-//     type: String
-//   }
-// })
+// 
+
 const emits = defineEmits(["update:modelValue"])
 
 let DateVal = ref(dateFormat(new Date().getTime()));
