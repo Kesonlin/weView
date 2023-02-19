@@ -7,12 +7,24 @@
   <DateTimePicker v-model="DateTimeValue" @update:model-value="updateDate" />
 </template>
 
-<script setup lang="ts">
+<script>
 import { ref } from 'vue'
-let DateTimeValue = ref('')
-const updateDate = (val) => {
-  DateTimeValue.value = val
+export default {
+  setup() {
+    let DateTimeValue = ref('')
+    const updateDate = (val) => {
+        DateTimeValue.value = val
+   }
+     return {
+      DateTimeValue,
+      updateDate
+    }
+  }
+
+ 
 }
+
+
 </script>
 <style lang="scss" scoped></style>
 ```

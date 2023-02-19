@@ -24,8 +24,8 @@
       :Duration=duration :OffsetY=offsetY Type="scuess" Position="top-right"/>
     <Notification :ShowClose=true Title="默认通知" Content="这是一个默认通知" 
     :Duration=0 :OffsetY=150  Position="top-right"/>
-    <Notification  Title="不可关闭" Content="此通知将会在5s后自动关闭" 
-    :Duration=5000   Position="bottom-right"/>
+    <Notification  Title="不可关闭" Content="此通知将会在10s后自动关闭" 
+    :Duration=10000   Position="bottom-right" :ShowClose=false />
     <!-- Notification组件 end -->
 
     <br/>

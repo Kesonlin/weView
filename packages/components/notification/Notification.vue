@@ -28,8 +28,7 @@
 <script setup lang="ts">
     import {
         ref,
-        //reactive,
-        onUpdated,
+
         onMounted,
         computed,
     } from 'vue'
@@ -68,9 +67,7 @@
         IsVisible.value = false
 
     }
-    onUpdated(() => {
-
-    })
+ 
     onMounted(() => {
         if (props.Duration != 0) {
             Timer.value = window.setInterval(() => {
