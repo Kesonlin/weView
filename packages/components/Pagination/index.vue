@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import './index.scss'
+import '../Table/assets/font.scss'
 import { Ref, ref, watch, useSlots, computed } from 'vue'
 
 export interface PageProps {
@@ -195,7 +196,7 @@ watch(
       @click="refresh"
       class="pager-refresh"
     >
-      <i class="icon icon-refresh" />
+      <i class="wv-icon wv-icon-refresh" />
     </a>
     <span v-if="props.showSkip" class="pager-skip">
       到第

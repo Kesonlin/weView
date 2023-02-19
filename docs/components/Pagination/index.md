@@ -1,4 +1,4 @@
-# Pagination 分页基础使用
+# Pagination 分页
 
 ## 介绍
 
@@ -306,12 +306,13 @@ export default {
   box-sizing: content-box;
 }
 .btn {
-  margin-left: 1em;
+  margin-right: 1em;
   padding: 0.5em 1em;
   border: 0;
   border-radius: 0.2em;
   background: orangered;
   color: white;
+  cursor: pointer;
 }
 </style>
 ```

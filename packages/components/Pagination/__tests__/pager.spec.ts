@@ -1,6 +1,6 @@
 /// <reference types="vitest"/>
 // @vitest-environment happy-dom
-import { ref } from 'vue'
+import { ref, nextTick } from 'vue'
 import Pagination from '../index'
 import { describe, expect, test } from 'vitest'
 import { mount, shallowMount } from '@vue/test-utils'
@@ -21,7 +21,7 @@ const assertElementsExistence = (
 }
 
 describe('Pagination test', () => {
-  test('test classes', () => {
+  test('test elements', () => {
     const wrapper = shallowMount(Pagination, {
       props: {
         total: 10,
@@ -46,14 +46,18 @@ describe('Pagination test', () => {
     ).toBe(true)
   })
 
-  test('test current page', () => {
+  test('test current page', async () => {
     const wrapper = shallowMount(Pagination, {
       props: {
-        total: 10,
+        total: 100,
         limit: 10,
         showPage: true,
       },
     })
+    const c = wrapper.getCurrentComponent()
+    console.log(c.emit('change', { current: 2, limit: 10 }))
+    console.log(wrapper.emitted('change'))
+    await nextTick()
     // console.log(wrapper.html())
     assertCurrent(wrapper, 1)
   })
@@ -70,7 +74,7 @@ describe('Pagination test', () => {
     expect(wrapper.find('.pager-count').text()).toBe('共 125 条 13 页')
   })
 
-  test('test with theme', async () => {
+  test('test theme', async () => {
     const withBackground = ref('cyan')
     const wrapper = mount(Pagination, {
       props: {

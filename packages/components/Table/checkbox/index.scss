@@ -1,0 +1,205 @@
+.wv-checkbox[size="lg"] {
+	height: 18px;
+	line-height: 18px;
+	.wv-form-checkbox[wv-skin="primary"] {
+		.wv-icon {
+			width: 18px;
+			height: 18px;
+			font-size: 16px;
+		}
+		.wv-checkbox-label {
+			height: 18px;
+			line-height: 18px;
+			font-size: 16px;
+		}
+	}
+}
+.wv-checkbox[size="md"] {
+	height: 16px;
+	line-height: 16px;
+	.wv-form-checkbox[wv-skin="primary"] {
+		.wv-icon {
+			width: 16px;
+			height: 16px;
+			font-size: 14px;
+		}
+		.wv-checkbox-label {
+			height: 16px;
+			line-height: 16px;
+			font-size: 14px;
+		}
+	}
+}
+.wv-checkbox[size="sm"] {
+	height: 14px;
+	line-height: 14px;
+	.wv-form-checkbox[wv-skin="primary"] {
+		.wv-icon {
+			width: 14px;
+			height: 14px;
+			font-size: 12px;
+		}
+		.wv-checkbox-label {
+			height: 14px;
+			line-height: 14px;
+			font-size: 12px;
+		}
+	}
+}
+.wv-checkbox[size="xs"] {
+	height: 12px;
+	line-height: 12px;
+	.wv-form-checkbox[wv-skin="primary"] {
+		.wv-icon {
+			width: 12px;
+			height: 12px;
+			font-size: 10px;
+		}
+		.wv-checkbox-label {
+			height: 12px;
+			line-height: 12px;
+			font-size: 10px;
+		}
+	}
+}
+.wv-checkbox {
+	input[type="checkbox"] {
+		display: none;
+	}
+}
+.wv-form-checkbox {
+	position: relative;
+	height: 30px;
+	line-height: 30px;
+	margin-right: 10px;
+	padding-right: 30px;
+	cursor: pointer;
+	font-size: 0;
+	-webkit-transition: 0.1s linear;
+	transition: 0.1s linear;
+	box-sizing: border-box;
+	span {
+		padding: 0 10px;
+		height: 100%;
+		font-size: 14px;
+		border-radius: 2px 0 0 2px;
+		background-color: var(--global-neutral-color-6, #d2d2d2);
+		color: #fff;
+		overflow: hidden;
+	}
+	&:hover {
+		span {
+			background-color: var(--global-neutral-color-8, #c2c2c2);
+		}
+		i {
+			border-color: var(--global-neutral-color-8, #c2c2c2);
+			color: var(--global-neutral-color-8, #c2c2c2);
+		}
+	}
+	i {
+		top: 0;
+		right: 0;
+		width: 29px;
+		height: 28px;
+		position: absolute;
+		border-top: 1px solid var(--global-neutral-color-6, #d2d2d2);
+		border-bottom: 1px solid var(--global-neutral-color-6, #d2d2d2);
+		border-right: 1px solid var(--global-neutral-color-6, #d2d2d2);
+		border-radius: 0 2px 2px 0;
+		color: #fff;
+		font-size: 20px;
+		text-align: center;
+	}
+}
+.wv-form-checkbox[wv-skin="primary"] {
+	height: auto !important;
+	line-height: normal !important;
+	min-width: 18px;
+	min-height: 18px;
+	border: none !important;
+	margin-right: 0;
+	padding-left: 28px;
+	padding-right: 0;
+	background: 0 0;
+	span {
+		padding-left: 0;
+		padding-right: 15px;
+		line-height: 18px;
+		background: 0 0;
+		color: #666;
+	}
+	i {
+		right: auto;
+		left: 0;
+		width: 16px;
+		height: 16px;
+		line-height: 16px;
+		border: 1px solid var(--global-neutral-color-6, #d2d2d2);
+		font-size: 12px;
+		border-radius: 2px;
+		background-color: #fff;
+		-webkit-transition: 0.1s linear;
+		transition: 0.1s linear;
+	}
+}
+.wv-form-checkbox[wv-skin="primary"]:hover {
+	i {
+		border-color: var(--global-checked-color, #1e9fff);
+		color: #fff;
+	}
+}
+.wv-form-checked,
+.wv-form-checked:hover {
+	border-color: var(--global-checked-color, #1e9fff);
+}
+.wv-form-checked i,
+.wv-form-checked:hover i {
+	color: var(--global-checked-color, #1e9fff);
+}
+.wv-form-checked span,
+.wv-form-checked:hover span {
+	background-color: var(--global-checked-color, #1e9fff);
+}
+.wv-form-checked[wv-skin="primary"] {
+	i {
+		border-color: var(--global-checked-color, #1e9fff);
+		background-color: var(--global-checked-color, #1e9fff);
+		color: #fff;
+	}
+	span {
+		background: 0 0 !important;
+	}
+}
+.wv-checkbox-disabled[wv-skin="primary"] {
+	span {
+		background: 0 0 !important;
+		color: var(--global-neutral-color-8, #c2c2c2) !important;
+	}
+}
+.wv-checkbox-disabled[wv-skin="primary"]:hover {
+	i {
+		border-color: var(--global-neutral-color-6, #d2d2d2);
+	}
+}
+.wv-checkbox-disabled,
+.wv-checkbox-disabled i {
+	border-color: var(--global-neutral-color-3, #eeeeee) !important;
+}
+.wv-checkbox-disabled {
+	span {
+		background-color: var(--global-neutral-color-3, #eeeeee) !important;
+	}
+	em {
+		color: var(--global-neutral-color-6, #d2d2d2) !important;
+	}
+	&:hover {
+		i {
+			color: #fff !important;
+		}
+	}
+}
+.wv-checkbox-disabled .wv-icon-ok,
+.wv-checkbox-disabled .wv-icon-subtraction {
+	background-color: var(--global-neutral-color-3, #eeeeee) !important;
+	border-color: var(--global-neutral-color-3, #eeeeee) !important;
+}

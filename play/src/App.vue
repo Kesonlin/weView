@@ -3,6 +3,9 @@
     <!-- Pagination start -->
     <h3>• Pagination分页</h3>
     <Pagination />
+    <!-- WVTable start -->
+    <h3>• WVTable表格</h3>
+    <WVTable />
     <!-- Input组件 start -->
     <h3>• Input输入框</h3>
     <p>(1) 基础样式</p>
@@ -213,6 +216,7 @@ import Button from '../../packages/components/Button/src/Button.vue'
 import Row from '../../packages/components/Layout/src/row.vue'
 import Col from '../../packages/components/Layout/src/col.vue'
 import Pagination from '../../demo/Pagination/PagerDemo.vue'
+import WVTable from '../../demo/Table/TableDemo.vue'
 import '../../packages/fonts/iconfont.css'
 
 
