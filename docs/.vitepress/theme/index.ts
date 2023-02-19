@@ -5,6 +5,8 @@ import 'vitepress-theme-demoblock/theme/styles/index.css'
 import Demo from 'vitepress-theme-demoblock/components/Demo.vue'
 import DemoBlock from 'vitepress-theme-demoblock/components/DemoBlock.vue'
 import weView from '../../../packages/components/index.ts'
+import '../../../packages/fonts/iconfont.css'
+
 
 export default {
   ...DefaultTheme,
@@ -14,4 +16,3 @@ export default {
     app.component('DemoBlock', DemoBlock)
   },
 }
-

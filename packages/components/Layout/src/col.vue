@@ -28,18 +28,12 @@ export default defineComponent({
             default: ''
         }
     },
-    setup() {
-        // const gutter = computed(() => {
-        //     const gutters = inject('Row')
-        //     console.log(gutters)
-        // })
-    }
-
 })
 </script>
 <style lang="scss" scoped>
 .x-col {
     border-radius: 4px;
+    margin-bottom: 20px;
 }
 
 [class*=x-col-] {
