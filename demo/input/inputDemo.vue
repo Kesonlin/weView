@@ -13,7 +13,7 @@
 </template>
     
 <script setup lang="ts">
-    import Input from '../../packages/components/input/Input.vue'
+    import Input from '../../packages/components/Input/Input.vue'
     import { ref } from 'vue'
     const inputText1 = ref('');
     const inputText2 = ref('');

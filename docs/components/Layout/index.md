@@ -6,67 +6,68 @@
 
 使用单一分栏创建基础的栅格布局。
 
-:::demo 通过 `row` 和 `col` 组件，并通过 `col` 组件的 `span` 属性我们就可以自由地组合布局。
+:::demo 通过 `WRow` 和 `WCol` 组件，并通过 `WCol` 组件的 `span` 属性我们就可以自由地组合布局。
+
 ```vue
 <template>
-<Row>
-    <Col :span="24">
-    <div class="grid-content bg-purple-dark"></div>
-    </Col>
-  </Row>
-  <Row>
-    <Col :span="12">
-    <div class="grid-content bg-purple"></div>
-    </Col>
-    <Col :span="12">
-    <div class="grid-content bg-purple-light"></div>
-    </Col>
-  </Row>
-  <Row>
-    <Col :span="8">
-    <div class="grid-content bg-purple"></div>
-    </Col>
-    <Col :span="8">
-    <div class="grid-content bg-purple-light"></div>
-    </Col>
-    <Col :span="8">
-    <div class="grid-content bg-purple"></div>
-    </Col>
-  </Row>
-  <Row>
-    <Col :span="6">
-    <div class="grid-content bg-purple"></div>
-    </Col>
-    <Col :span="6">
-    <div class="grid-content bg-purple-light"></div>
-    </Col>
-    <Col :span="6">
-    <div class="grid-content bg-purple"></div>
-    </Col>
-    <Col :span="6">
-    <div class="grid-content bg-purple-light"></div>
-    </Col>
-  </Row>
-  <Row>
-    <Col :span="4">
-    <div class="grid-content bg-purple"></div>
-    </Col>
-    <Col :span="4">
-    <div class="grid-content bg-purple-light"></div>
-    </Col>
-    <Col :span="4">
-    <div class="grid-content bg-purple"></div>
-    </Col>
-    <Col :span="4">
-    <div class="grid-content bg-purple-light"></div>
-    </Col>
-    <Col :span="4">
-    <div class="grid-content bg-purple"></div>
-    </Col>
-    <Col :span="4">
-    <div class="grid-content bg-purple-light"></div>
-    </Col>
-  </Row>
+  <WRow>
+    <WCol :span="24">
+      <div class="grid-content bg-purple-dark"></div>
+    </WCol>
+  </WRow>
+  <WRow>
+    <WCol :span="12">
+      <div class="grid-content bg-purple"></div>
+    </WCol>
+    <WCol :span="12">
+      <div class="grid-content bg-purple-light"></div>
+    </WCol>
+  </WRow>
+  <WRow>
+    <WCol :span="8">
+      <div class="grid-content bg-purple"></div>
+    </WCol>
+    <WCol :span="8">
+      <div class="grid-content bg-purple-light"></div>
+    </WCol>
+    <WCol :span="8">
+      <div class="grid-content bg-purple"></div>
+    </WCol>
+  </WRow>
+  <WRow>
+    <WCol :span="6">
+      <div class="grid-content bg-purple"></div>
+    </WCol>
+    <WCol :span="6">
+      <div class="grid-content bg-purple-light"></div>
+    </WCol>
+    <WCol :span="6">
+      <div class="grid-content bg-purple"></div>
+    </WCol>
+    <WCol :span="6">
+      <div class="grid-content bg-purple-light"></div>
+    </WCol>
+  </WRow>
+  <WRow>
+    <WCol :span="4">
+      <div class="grid-content bg-purple"></div>
+    </WCol>
+    <WCol :span="4">
+      <div class="grid-content bg-purple-light"></div>
+    </WCol>
+    <WCol :span="4">
+      <div class="grid-content bg-purple"></div>
+    </WCol>
+    <WCol :span="4">
+      <div class="grid-content bg-purple-light"></div>
+    </WCol>
+    <WCol :span="4">
+      <div class="grid-content bg-purple"></div>
+    </WCol>
+    <WCol :span="4">
+      <div class="grid-content bg-purple-light"></div>
+    </WCol>
+  </WRow>
 </template>
 <style lang="scss" scoped>
 .bg-purple-dark {
@@ -87,9 +88,11 @@
 }
 </style>
 ```
+
 :::
 
 ## Attributes
-| 参数      | 说明          | 类型         | 可选值   | 默认值 |
-| ----------| -----------   | -----------  |  ----------- | -----------|
-| span      | 栅格占据的列数          | number       | — | 24 |
+
+| 参数 | 说明           | 类型   | 可选值 | 默认值 |
+| ---- | -------------- | ------ | ------ | ------ |
+| span | 栅格占据的列数 | number | —      | 24     |

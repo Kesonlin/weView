@@ -1,17 +1,40 @@
 <template>
-  <h1>Demo</h1>
-  <!-- Input组件 start -->
-  <h3>• Input输入框</h3>
-  <p>(1) 基础样式</p>
-  <Input v-model="inputText1" placeholder="请输入..." />&emsp;输入的内容：{{ inputText1 }}
-  <p>(2) 禁用状态 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;(3) 可清空</p>
-  <Input placeholder="请输入..." disabled /> &emsp;
-  <Input v-model="inputText2" placeholder="请输入..." clearable />
-  <p>(4) 密码框 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;(5) 输入长度限制</p>
-  <Input v-model="inputText3" placeholder="请输入密码" show-password /> &emsp;
-  <Input v-model="inputText4" placeholder="请输入..." :maxlength="10" />
-  <!-- Input组件 end -->
-  <br />
+    <h1>Demo</h1>
+    <!-- Pagination start -->
+    <h3>• Pagination分页</h3>
+    <Pagination />
+    <!-- Input组件 start -->
+    <h3>• Input输入框</h3>
+    <p>(1) 基础样式</p>
+    <Input v-model="inputText1" placeholder="请输入..." />&emsp;输入的内容：{{ inputText1 }}
+    <p>(2) 禁用状态 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;(3) 可清空</p>
+    <Input placeholder="请输入..." disabled/> &emsp;
+    <Input v-model="inputText2" placeholder="请输入..." clearable/>
+    <p>(4) 密码框 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;(5) 输入长度限制</p>
+    <Input v-model="inputText3" placeholder="请输入密码" show-password/> &emsp;
+    <Input v-model="inputText4" placeholder="请输入..." :maxlength="10"/>
+    <!-- Input组件 end -->
+    <br/>
+
+    <!-- Notification组件 start -->
+    <h3>• Notification通知</h3>
+    <Button @click="change">Show Notification</Button>
+    <Button @click="close">Close Notification</Button>
+    <Notification ref=noti :ShowClose=true Title="Scuess" Content="Please continue" 
+      :Duration=duration :OffsetY=offsetY Type="scuess" Position="top-right"/>
+    <Notification :ShowClose=true Title="默认通知" Content="这是一个默认通知" 
+    :Duration=0 :OffsetY=150  Position="top-right"/>
+    <Notification  Title="不可关闭" Content="此通知将会在5s后自动关闭" 
+    :Duration=5000   Position="bottom-right"/>
+    <!-- Notification组件 end -->
+
+    <br/>
+
+    <!-- DateTimePicker组件 start -->
+    <h3>• DateTimePicker日期选择器</h3>
+    <DateTimePicker v-model="DateTimeValue" @update:model-value="updateDate"/>
+    <!-- DateTimePicker组件 end -->
+    <br/>
 
   <!-- Notification组件 start -->
   <h3>• Notification通知</h3>
@@ -190,11 +213,12 @@
 
 <script setup lang="ts">
 import Notification from '../../packages/components/notification/Notification.vue'
-import Input from '../../packages/components/input/Input.vue'
+import Input from '../../packages/components/Input/Input.vue'
 import DateTimePicker from '../../packages/components/DatePicker/DateTimePicker/DateTimePicker.vue'
 import Button from '../../packages/components/Button/src/Button.vue'
 import Row from '../../packages/components/Layout/src/row.vue'
 import Col from '../../packages/components/Layout/src/col.vue'
+import Pagination from '../../demo/Pagination/PagerDemo.vue'
 import '../../packages/fonts/iconfont.css'
 
 
@@ -222,13 +246,11 @@ const inputText4 = ref('');
 let DateTimeValue = ref('123')
 const updateDate = (val) => {
   DateTimeValue.value = val;
-  alert(DateTimeValue.value)
 }
 
 // button组件
 function btnClick() {
-  alert(DateTimeValue.value);
-
+    alert('触发按钮');
 }
 
 

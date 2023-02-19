@@ -1,0 +1,210 @@
+.pager {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px 0;
+  font-size: 0;
+}
+
+.pager > a:first-child,
+.pager > a:first-child em {
+  border-radius: 2px 0 0 2px;
+}
+
+.pager > a:last-child,
+.pager > a:last-child em {
+  border-radius: 0 2px 2px 0;
+}
+
+.pager > :first-child {
+  margin-left: 0 !important;
+}
+
+.pager > :last-child {
+  margin-right: 0 !important;
+}
+
+.pager a,
+.pager button,
+.pager input,
+.pager select,
+.pager span {
+  border: 1px solid var(--global-neutral-color-3, #eeeeee);
+}
+
+.pager a,
+.pager span {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 15px;
+  height: 28px;
+  line-height: 28px;
+  margin: 0 -1px 5px 0;
+  background-color: #fff;
+  color: #333;
+  font-size: 12px;
+}
+
+.pager a:hover {
+  color: var(--global-primary-color, #1e9fff);
+}
+.pager-a-red:hover{
+  color: #ff5722 !important;
+}
+
+.pager-a-orange:hover{
+  color: #ffb800 !important;
+}
+
+.pager-a-green:hover{
+  color: #009688 !important;
+}
+
+.pager-a-cyan:hover{
+  color: #2f4056 !important;
+}
+
+.pager-a-blue:hover{
+  color: #01aaed !important;
+}
+
+.pager-a-magenta:hover{
+  color: magenta !important;
+}
+
+.pager-a-gray:hover{
+  color: #c2c2c2 !important;
+}
+
+.pager em {
+  font-style: normal;
+}
+
+.pager .pager-spr {
+  color: #999;
+  font-weight: 700;
+}
+
+.pager a {
+  text-decoration: none;
+}
+
+.pager .pager-curr {
+  position: relative;
+}
+
+.pager .pager-curr em {
+  position: relative;
+  color: #fff;
+}
+
+.pager .pager-curr .pager-em {
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  padding: 1px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--global-primary-color, #1e9fff);
+}
+
+.pager-em {
+  border-radius: 2px;
+}
+
+.pager-next em,
+.pager-prev em {
+  font-family: Sim sun;
+  font-size: 16px;
+}
+
+.pager .pager-count,
+.pager .pager-limits,
+.pager .pager-refresh,
+.pager .pager-skip {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0;
+  border: none;
+}
+
+.pager .pager-limits,
+.pager .pager-refresh {
+  vertical-align: top;
+}
+
+.pager .pager-refresh i {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.pager select {
+  height: 22px;
+  padding: 3px;
+  margin-top: 4px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.pager .pager-skip {
+  height: 30px;
+  line-height: 30px;
+  color: #999;
+}
+
+.pager button,
+.pager input {
+  height: 30px;
+  line-height: 30px;
+  border-radius: 2px;
+  vertical-align: top;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.pager input {
+  display: inline-block;
+  width: 40px;
+  margin: 0 10px;
+  padding: 0 3px;
+  text-align: center;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}
+
+.pager input:focus,
+.pager select:focus {
+  border-color: var(--global-primary-color, #1e9fff) !important;
+}
+
+.pager button {
+  margin-left: 10px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+
+.bg-orange {
+  background-color: orange !important;
+}
+
+.bg-cyan {
+  background-color: cyan !important;
+}
+
+.bg-magenta {
+  background-color: magenta !important;
+}
+
+.bg-red {
+  background-color: red !important;
+}
+
+.bg-green {
+  background-color: green !important;
+}
+
+.bg-blue {
+  background-color: #1e9fff !important;
+}
