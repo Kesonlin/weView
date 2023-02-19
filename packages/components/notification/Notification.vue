@@ -1,5 +1,5 @@
 <template>
-  <!-- <Transition name="Notification">--> 
+  <Transition name="Notification">
         <div id="NotificationPage" :style=PositionStyle v-show="IsVisible">
             <template v-if="Icon=='none'">
                 <img class="NotificationType" v-if="Type=='scuess'" src="./src/scuess.png" alt="" />
@@ -20,7 +20,7 @@
             </div>
             <img @click="CloseNotification" v-show="ShowClose" class="NotificationClose" src="./src/close.png" alt="" />
         </div>
- <!--  </Transition>--> 
+ </Transition>
 </template>
 <style>
     @import url(./notification.css);
