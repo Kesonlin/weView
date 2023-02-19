@@ -8,7 +8,7 @@
     <Input v-model="inputText2" placeholder="请输入..." clearable/>
     <p>(4) 密码框 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;(5) 输入长度限制</p>
     <Input v-model="inputText3" placeholder="请输入密码" show-password/> &emsp;
-    <Input v-model="inputText1" placeholder="请输入..." :maxlength="10"/>
+    <Input v-model="inputText4" placeholder="请输入..." :maxlength="10"/>
     <!-- Input组件 end -->
 </template>
     
@@ -18,6 +18,7 @@
     const inputText1 = ref('');
     const inputText2 = ref('');
     const inputText3 = ref('');
+    const inputText4 = ref('');
 </script>
     
 <style lang="scss" scoped>
