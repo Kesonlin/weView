@@ -13,18 +13,14 @@ export default {
   setup() {
     let DateTimeValue = ref('')
     const updateDate = (val) => {
-        DateTimeValue.value = val
-   }
-     return {
-      DateTimeValue,
-      updateDate
+      DateTimeValue.value = val
     }
-  }
-
- 
+    return {
+      DateTimeValue,
+      updateDate,
+    }
+  },
 }
-
-
 </script>
 <style lang="scss" scoped></style>
 ```

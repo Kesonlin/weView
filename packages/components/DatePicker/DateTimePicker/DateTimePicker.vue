@@ -98,8 +98,10 @@ import {
   clickPrevOrNext,
 } from './DateTimePicker';
 
-// 
-
+const props = defineProps({
+  //子组件接收父组件传递过来的值
+  modelValue: String,
+})
 const emits = defineEmits(["update:modelValue"])
 
 let DateVal = ref(dateFormat(new Date().getTime()));
@@ -312,16 +314,15 @@ const theData = computed(() => {
   return theDateYear.value + '年' + timeFormat(theDateMonth.value) + '月';
 });
 
-const DateTimeVal = ref('');
-// const DateTimeVal = computed({
-//   get: () => {
-//     return props.modelValue
-//   },
-//   set: (val) => {
-//     emits('update:modelValue', val)
-//     return true;
-//   }
-// })
+const DateTimeVal = computed({
+  get: () => {
+    return props.modelValue
+  },
+  set: (val) => {
+    emits('update:modelValue', val)
+    return true;
+  }
+})
 
 </script>
   

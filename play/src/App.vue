@@ -45,12 +45,6 @@
   <!-- Notification组件 end -->
   <br />
 
-  <!-- DateTimePicker组件 start -->
-  <h3>• DateTimePicker日期选择器</h3>
-  <DateTimePicker v-model="DateTimeValue" @update:model-value="updateDate" />
-  <!-- DateTimePicker组件 end -->
-  <br />
-
   <!-- Button组件 start -->
   <h3>• Button按钮</h3>
   <div class="basicUsage">
