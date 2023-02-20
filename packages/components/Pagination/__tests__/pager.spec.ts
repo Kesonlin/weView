@@ -1,6 +1,6 @@
 /// <reference types="vitest"/>
 // @vitest-environment happy-dom
-import { ref, nextTick } from 'vue'
+import { nextTick } from 'vue'
 import Pagination from '../index'
 import { describe, expect, test } from 'vitest'
 import { mount, shallowMount } from '@vue/test-utils'
@@ -22,13 +22,27 @@ const assertElementsExistence = (
 
 describe('Pagination test', () => {
   test('test elements', () => {
-    const wrapper = shallowMount(Pagination, {
+    const wrapper = mount(Pagination, {
       props: {
         total: 10,
         limit: 10,
+        showPage: true,
+        showSkip: true,
+        showRefresh: true,
       },
     })
-    assertElementsExistence(wrapper, ['.pager-limits'], true)
+    assertElementsExistence(
+      wrapper,
+      [
+        '.pager-prev',
+        '.pager-limits',
+        '.pager-refresh',
+        '.pager-skip',
+        '.pager-btn',
+        '.pager-next',
+      ],
+      true
+    )
   })
 
   test('test classes', () => {
@@ -55,15 +69,17 @@ describe('Pagination test', () => {
       },
     })
     const c = wrapper.getCurrentComponent()
-    console.log(c.emit('change', { current: 2, limit: 10 }))
-    console.log(wrapper.emitted('change'))
-    await nextTick()
-    // console.log(wrapper.html())
     assertCurrent(wrapper, 1)
+    // console.log(c.emit('change', { current: 2, limit: 10 }))
+    // console.log(wrapper.emitted('change'))
+    // console.log(wrapper.html())
+    c.props.modelValue = 2
+    await nextTick()
+    assertCurrent(wrapper, 2)
   })
 
   test('test total', async () => {
-    const wrapper = mount(Pagination, {
+    const wrapper = shallowMount(Pagination, {
       props: {
         total: 125,
         limit: 10,
@@ -75,13 +91,12 @@ describe('Pagination test', () => {
   })
 
   test('test theme', async () => {
-    const withBackground = ref('cyan')
-    const wrapper = mount(Pagination, {
+    const wrapper = shallowMount(Pagination, {
       props: {
         total: 10,
         limit: 10,
         showPage: true,
-        theme: withBackground.value,
+        theme: 'cyan',
       },
     })
     expect(wrapper.find('.bg-cyan').exists()).toBe(true)

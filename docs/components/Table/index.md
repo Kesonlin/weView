@@ -138,20 +138,20 @@ export default {
         username: 'root',
         password: 'root',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: 'root',
         password: 'root',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: 'woow',
         password: 'woow',
         age: '20',
         remark:
-          'weView -  是 一 套 Vue 3.0 的 桌 面 端 组 件 库.weView - 是 一 套 Vue 3.0 的 桌 面 端 组 件 库.',
+          'weView -  是一个仿element-plus的组件库。weView - 是一个仿element-plus的组件库。',
       },
     ]
 
@@ -166,6 +166,9 @@ export default {
 <style lang="scss" scoped>
 .wv-table {
   display: table;
+}
+tr:nth-child(2n) {
+  background-color: revert;
 }
 </style>
 ```
@@ -235,6 +238,10 @@ export default {
 </style>
 ```
 
+:::
+
+:::tip
+通过 `size` 属性表格尺寸。
 :::
 
 ### 开启分页
@@ -321,6 +328,10 @@ export default {
 
 :::
 
+:::tip
+通过 `page` 属性设置分页。
+:::
+
 ### 开启排序
 
 ::: demo 开启排序
@@ -352,10 +363,9 @@ export default {
     const dataSource4 = [
       { name: '张三', score: 100 },
       { name: '李四', score: 80 },
-      { name: '王二', score: 99 },
-      { name: '麻子', score: 92 },
+      { name: '王五', score: 99 },
+      { name: '有名', score: 92 },
       { name: '无名', score: 60 },
-      { name: '有名', score: 70 },
     ]
 
     return {
@@ -375,6 +385,10 @@ export default {
 
 :::
 
+:::tip
+设置列属性 `sort: true`, 开启排序。
+:::
+
 ### 开启子表
 
 ::: demo 开启子表
@@ -387,7 +401,7 @@ export default {
     :default-expand-all="defaultExpandAll6"
     v-model:expandKeys="expandKeys6"
   >
-    <template v-slot:expand="{ data }">
+    <template #expand="{ data }">
       <wv-table :columns="columns6" :data-source="dataSource6"></wv-table>
     </template>
   </wv-table>
@@ -414,10 +428,9 @@ export default {
     const dataSource6 = [
       { id: '1', name: '张三', score: 100 },
       { id: '2', name: '李四', score: 80 },
-      { id: '3', name: '王二', score: 99 },
-      { id: '4', name: '麻子', score: 92 },
+      { id: '3', name: '王五', score: 99 },
+      { id: '4', name: '有名', score: 92 },
       { id: '5', name: '无名', score: 60 },
-      { id: '6', name: '有名', score: 70 },
     ]
 
     const expandKeys6 = ref(['1'])
@@ -442,7 +455,7 @@ export default {
 :::
 
 :::tip
-当表格内容较多不能一次性完全展示时, 你可以将多余内容展示到 `expand` 插槽。
+当表格内容较多不能一次性完全展示时, 可以将多余内容展示到 `expand` 插槽。
 :::
 
 ### 树形表格
@@ -536,7 +549,7 @@ export default {
 
 ### 固定表头
 
-::: demo 设置 `height` 或者 `max-height` 即可实现固定表头
+::: demo 固定表头
 
 ```vue
 <template>
@@ -545,7 +558,7 @@ export default {
     :data-source="dataSource8"
     :max-height="maxHeight"
   >
-    <template v-slot:operator="{ data }">
+    <template #operator="{ data }">
       <button class="btn2" @click="deleteColumn(data)">删除</button>
     </template>
   </wv-table>
@@ -595,71 +608,71 @@ export default {
         username: '1',
         password: 'root',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: '2',
         password: 'root',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: '3',
         password: 'root',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: '4',
         password: 'root',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: '5',
         password: 'root',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: '6',
         password: 'root',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: '7',
         password: 'root',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: '8',
         password: 'woow',
         age: '20',
         remark:
-          'weView - 是 一 套 Vue 3.0 的 桌 面 端 组 件 库.weView - 是 一 套 Vue 3.0 的 桌 面 端 组 件 库.',
+          'weView - 是一个仿element-plus的组件库。weView - 是一个仿element-plus的组件库。',
       },
       {
         username: '9',
         password: 'woow',
         age: '20',
         remark:
-          'weView - 是 一 套 Vue 3.0 的 桌 面 端 组 件 库.weView - 是 一 套 Vue 3.0 的 桌 面 端 组 件 库.',
+          'weView - 是一个仿element-plus的组件库。weView - 是一个仿element-plus的组件库。',
       },
       {
         username: '10',
         password: 'woow',
         age: '20',
         remark:
-          'weView - 是 一 套 Vue 3.0 的 桌 面 端 组 件 库.weView - 是 一 套 Vue 3.0 的 桌 面 端 组 件 库.',
+          'weView - 是一个仿element-plus的组件库。weView - 是一个仿element-plus的组件库。',
       },
       {
         username: '11',
         password: 'woow',
         age: '20',
         remark:
-          'weView - 是 一 套 Vue 3.0 的 桌 面 端 组 件 库.weView - 是 一 套 Vue 3.0 的 桌 面 端 组 件 库.',
+          'weView - 是一个仿element-plus的组件库。weView - 是一个仿element-plus的组件库。',
       },
     ])
 
@@ -689,9 +702,13 @@ export default {
 
 :::
 
+:::tip
+设置 `height` 或者 `max-height` 即可实现固定表头。
+:::
+
 ### 斑马条纹
 
-::: demo 通过 `even` 属性, 开启斑马条纹, 默认为 `false。`
+::: demo 斑马条纹
 
 ```vue
 <template>
@@ -728,11 +745,11 @@ export default {
     ]
 
     const dataSource1 = [
-      { username: 'root', password: 'root', age: '18', remark: 'weView - ' },
-      { username: 'root', password: 'root', age: '18', remark: 'weView - ' },
-      { username: 'woow', password: 'woow', age: '20', remark: 'weView - ' },
-      { username: 'woow', password: 'woow', age: '20', remark: 'weView - ' },
-      { username: 'woow', password: 'woow', age: '20', remark: 'weView - ' },
+      { username: 'root', password: 'root', age: '18', remark: 'weView' },
+      { username: 'root', password: 'root', age: '18', remark: 'weView' },
+      { username: 'woow', password: 'woow', age: '20', remark: 'weView' },
+      { username: 'woow', password: 'woow', age: '20', remark: 'weView' },
+      { username: 'woow', password: 'woow', age: '20', remark: 'weView' },
     ]
 
     return {
@@ -750,6 +767,10 @@ export default {
 </style>
 ```
 
+:::
+
+:::tip
+通过 `even` 属性, 开启斑马条纹, 默认为 `false`。
 :::
 
 ### 定义样式
@@ -796,11 +817,11 @@ export default {
     ]
 
     const dataSource1 = [
-      { username: 'root', password: 'root', age: '18', remark: 'weView - ' },
-      { username: 'root', password: 'root', age: '18', remark: 'weView - ' },
-      { username: 'woow', password: 'woow', age: '20', remark: 'weView - ' },
-      { username: 'woow', password: 'woow', age: '20', remark: 'weView - ' },
-      { username: 'woow', password: 'woow', age: '20', remark: 'weView - ' },
+      { username: 'root', password: 'root', age: '18', remark: 'weView' },
+      { username: 'root', password: 'root', age: '18', remark: 'weView' },
+      { username: 'woow', password: 'woow', age: '20', remark: 'weView' },
+      { username: 'woow', password: 'woow', age: '20', remark: 'weView' },
+      { username: 'woow', password: 'woow', age: '20', remark: 'weView' },
     ]
 
     const cellStyle = function (row, column, rowIndex, columnIndex) {
@@ -888,11 +909,11 @@ export default {
     ]
 
     const dataSource1 = [
-      { username: 'root', password: 'root', age: '18', remark: 'weView - ' },
-      { username: 'root', password: 'root', age: '18', remark: 'weView - ' },
-      { username: 'woow', password: 'woow', age: '20', remark: 'weView - ' },
-      { username: 'woow', password: 'woow', age: '20', remark: 'weView - ' },
-      { username: 'woow', password: 'woow', age: '20', remark: 'weView - ' },
+      { username: 'root', password: 'root', age: '18', remark: 'weView' },
+      { username: 'root', password: 'root', age: '18', remark: 'weView' },
+      { username: 'woow', password: 'woow', age: '20', remark: 'weView' },
+      { username: 'woow', password: 'woow', age: '20', remark: 'weView' },
+      { username: 'woow', password: 'woow', age: '20', remark: 'weView' },
     ]
 
     return {
@@ -969,35 +990,35 @@ export default {
         password: 'root',
         sex: '男',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: 'root',
         password: 'root',
         sex: '男',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: 'woow',
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: 'woow',
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: 'woow',
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
     ]
 
@@ -1073,35 +1094,35 @@ export default {
         password: 'root',
         sex: '男',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: 'root',
         password: 'root',
         sex: '男',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: 'woow',
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: 'woow',
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: 'woow',
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
     ]
 
@@ -1123,7 +1144,7 @@ export default {
 :::
 
 :::tip
-通过 `columns` 配置 `type:'number'` 开启序号列。
+通过 `columns` 添加列 `type:'number'` 开启序号列。
 :::
 
 ### 开启多选
@@ -1132,8 +1153,8 @@ export default {
 
 ```vue
 <template>
-  <button class="btn" @click="changeSelectedKeys">修改选中</button>
-  <button class="btn" @click="changeDataSource23">修改数据</button>
+  <button class="update-btn" @click="changeSelectedKeys">修改选中</button>
+  <button class="update-btn" @click="changeDataSource23">修改数据</button>
   <wv-table
     :columns="columns23"
     :data-source="dataSource23"
@@ -1167,7 +1188,7 @@ export default {
           password: 'root',
           sex: '男',
           age: '18',
-          remark: 'weView - ',
+          remark: 'weView',
         },
         {
           id: '2',
@@ -1175,7 +1196,7 @@ export default {
           password: 'root',
           sex: '男',
           age: '18',
-          remark: 'weView - ',
+          remark: 'weView',
         },
       ]
     }
@@ -1220,7 +1241,7 @@ export default {
         password: 'root',
         sex: '男',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         id: '2',
@@ -1228,7 +1249,7 @@ export default {
         password: 'root',
         sex: '男',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         id: '3',
@@ -1236,7 +1257,7 @@ export default {
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         id: '4',
@@ -1244,7 +1265,7 @@ export default {
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         id: '5',
@@ -1252,7 +1273,7 @@ export default {
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
     ])
 
@@ -1272,12 +1293,12 @@ export default {
 .wv-table {
   display: table;
 }
-.btn {
+.update-btn {
   margin: 0 1em 1em 0;
   padding: 0.5em 1em;
   border: 0;
   border-radius: 0.2em;
-  background: orangered;
+  background: #1e9fff;
   color: white;
   cursor: pointer;
 }
@@ -1348,7 +1369,7 @@ export default {
         password: 'root',
         sex: '男',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         id: '2',
@@ -1356,7 +1377,7 @@ export default {
         password: 'root',
         sex: '男',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         id: '3',
@@ -1364,7 +1385,7 @@ export default {
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         id: '4',
@@ -1372,7 +1393,7 @@ export default {
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         id: '5',
@@ -1380,7 +1401,7 @@ export default {
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
     ]
 
@@ -1467,13 +1488,17 @@ export default {
 
 :::
 
+:::tip
+表格无数据时显示为一个空的 LOGO。
+:::
+
 ### 刷新数据
 
 ::: demo 刷新数据
 
 ```vue
 <template>
-  <button class="btn" @click="changeDataSource22">更新数据</button>
+  <button class="update-btn" @click="changeDataSource22">更新数据</button>
   <wv-table :columns="columns22" :data-source="dataSource22"></wv-table>
 </template>
 
@@ -1517,35 +1542,35 @@ export default {
         password: 'root',
         sex: '男',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: 'root',
         password: 'root',
         sex: '男',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: 'woow',
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: 'woow',
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: 'woow',
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
     ])
 
@@ -1574,12 +1599,12 @@ export default {
 .wv-table {
   display: table;
 }
-.btn {
+.update-btn {
   margin: 0 1em 1em 0;
   padding: 0.5em 1em;
   border: 0;
   border-radius: 0.2em;
-  background: orangered;
+  background: #1e9fff;
   color: white;
   cursor: pointer;
 }
@@ -1641,35 +1666,35 @@ export default {
         password: 'root',
         sex: '男',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: 'root',
         password: 'root',
         sex: '男',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: 'woow',
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: 'woow',
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         username: 'woow',
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
     ]
 
@@ -1748,7 +1773,7 @@ export default {
         password: 'root',
         sex: '男',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         id: '2',
@@ -1756,7 +1781,7 @@ export default {
         password: 'root',
         sex: '男',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         id: '3',
@@ -1764,7 +1789,7 @@ export default {
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         id: '4',
@@ -1772,7 +1797,7 @@ export default {
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         id: '5',
@@ -1780,7 +1805,7 @@ export default {
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
     ]
 
@@ -1825,23 +1850,23 @@ export default {
   <wv-table :columns="columns28" :data-source="dataSource28">
     <template #username="{ data }">
       <input
-        v-if="edingKeys[data.id]"
-        :model-value="data.username"
+        v-if="edingKeys.includes(data)"
+        :value="data.username"
         @input="changeUsername($event, data)"
       />
       <i
         class="wv-icon wv-icon-close"
         style="position: absolute;right:10px;"
-        v-if="edingKeys[data.id]"
-        @click="deleteEdit(data.id)"
+        v-if="edingKeys.includes(data)"
+        @click="deleteEdit(data)"
       ></i>
       <span v-else>
         {{ data.username }}
         <i
           class="wv-icon wv-icon-edit"
           style="position: absolute;right: 10px;"
-          v-if="!edingKeys[data.id]"
-          @click="editHandle(data.id)"
+          v-if="!edingKeys.includes(data)"
+          @click="editHandle(data)"
         ></i>
       </span>
     </template>
@@ -1891,7 +1916,7 @@ export default {
         password: 'root',
         sex: '男',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         id: '2',
@@ -1899,7 +1924,7 @@ export default {
         password: 'root',
         sex: '男',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         id: '3',
@@ -1907,7 +1932,7 @@ export default {
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         id: '4',
@@ -1915,7 +1940,7 @@ export default {
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         id: '5',
@@ -1923,16 +1948,21 @@ export default {
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
     ])
 
-    const editHandle = (key) => {
-      edingKeys.value.push(key)
+    const editHandle = (data) => {
+      // console.log(data)
+      edingKeys.value.push(data)
     }
 
-    const deleteEdit = (key) => {
-      edingKeys.value.splice(edingKeys.value.indexOf(key), 1)
+    const deleteEdit = (data) => {
+      // console.log(edingKeys.value.includes(data))
+      edingKeys.value.splice(
+        edingKeys.value.findIndex((v) => v.id === data.id),
+        1
+      )
     }
 
     const changeUsername = (val, data) => {
@@ -1972,6 +2002,10 @@ input {
 </style>
 ```
 
+:::
+
+:::tip
+通过列属性 `customSlot`, 自定义列插槽。
 :::
 
 ### 复杂表头
@@ -2037,7 +2071,7 @@ export default {
         password: 'root',
         sex: '男',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         id: '2',
@@ -2048,7 +2082,7 @@ export default {
         password: 'root',
         sex: '男',
         age: '18',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         id: '3',
@@ -2059,7 +2093,7 @@ export default {
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         id: '4',
@@ -2070,7 +2104,7 @@ export default {
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
       {
         id: '5',
@@ -2081,7 +2115,7 @@ export default {
         password: 'woow',
         sex: '男',
         age: '20',
-        remark: 'weView - ',
+        remark: 'weView',
       },
     ]
 
@@ -2102,13 +2136,17 @@ export default {
 
 :::
 
+:::tip
+通过列属性 `children`, 添加次级表头。
+:::
+
 ### 加载过渡
 
 ::: demo 加载过渡
 
 ```vue
 <template>
-  <button class="btn" @click="loadData">加载数据</button>
+  <button class="load-btn" @click="loadData">加载数据</button>
   <wv-table
     :columns="columns30"
     :data-source="dataSource30"
@@ -2176,7 +2214,7 @@ export default {
             password: 'root',
             sex: '男',
             age: '18',
-            remark: 'weView - ',
+            remark: 'weView',
             xian: '1',
             cun: '2',
           },
@@ -2189,7 +2227,7 @@ export default {
             password: 'root',
             sex: '男',
             age: '18',
-            remark: 'weView - ',
+            remark: 'weView',
             xian: '1',
             cun: '2',
           },
@@ -2202,7 +2240,7 @@ export default {
             password: 'woow',
             sex: '男',
             age: '20',
-            remark: 'weView - ',
+            remark: 'weView',
             xian: '1',
             cun: '2',
           },
@@ -2215,7 +2253,7 @@ export default {
             password: 'woow',
             sex: '男',
             age: '20',
-            remark: 'weView - ',
+            remark: 'weView',
             xian: '1',
             cun: '2',
           },
@@ -2228,7 +2266,7 @@ export default {
             password: 'woow',
             sex: '男',
             age: '20',
-            remark: 'weView - ',
+            remark: 'weView',
             xian: '1',
             cun: '2',
           },
@@ -2251,18 +2289,22 @@ export default {
 .wv-table {
   display: table;
 }
-.btn {
+.load-btn {
   margin: 0 1em 1em 0;
   padding: 0.5em 1em;
   border: 0;
   border-radius: 0.2em;
-  background: orangered;
+  background: #1e9fff;
   color: white;
   cursor: pointer;
 }
 </style>
 ```
 
+:::
+
+:::tip
+通过 `loading` 属性, 切换表格加载动画。
 :::
 
 ### 完整表格
@@ -2284,16 +2326,16 @@ export default {
     @row="rowClick5"
     @change="change555"
   >
-    <template v-slot:toolbar>
-      <button class="btn">新增</button>
+    <template #toolbar>
+      <button class="btn" style="background: #1AAD19">新增</button>
       <button class="btn">删除</button>
     </template>
-    <template v-slot:name="{ row, column, rowIndex, columnIndex }">
+    <template #name="{ row, column, rowIndex, columnIndex }">
       {{ row.name }}
     </template>
-    <template v-slot:name-title>😊</template>
-    <template v-slot:operator="{ row }">
-      <button class="btn2">修改</button>
+    <template #name-title>😊</template>
+    <template #operator="{ row }">
+      <button class="btn2" style="background: #1e9fff">修改</button>
       <button class="btn2">删除</button>
     </template>
   </wv-table>
@@ -2367,42 +2409,42 @@ export default {
         name: '小明',
         age: '18',
         remark:
-          'weView - 是 一 套 Vue 3.0 的 桌 面 端 组 件 库.weView - 是 一 套 Vue 3.0 的 桌 面 端 组 件 库.',
+          'weView - 是一个仿element-plus的组件库。weView - 是一个仿element-plus的组件库。',
       },
       {
         id: '2',
         name: '小红',
         age: '20',
         remark:
-          'weView - 是 一 套 Vue 3.0 的 桌 面 端 组 件 库.weView - 是 一 套 Vue 3.0 的 桌 面 端 组 件 库.',
+          'weView - 是一个仿element-plus的组件库。weView - 是一个仿element-plus的组件库。',
       },
       {
         id: '3',
         name: '小刚',
         age: '20',
         remark:
-          'weView - 是 一 套 Vue 3.0 的 桌 面 端 组 件 库.weView - 是 一 套 Vue 3.0 的 桌 面 端 组 件 库.',
+          'weView - 是一个仿element-plus的组件库。weView - 是一个仿element-plus的组件库。',
       },
       {
         id: '4',
         name: '小李',
         age: '20',
         remark:
-          'weView - 是 一 套 Vue 3.0 的 桌 面 端 组 件 库.weView - 是 一 套 Vue 3.0 的 桌 面 端 组 件 库.',
+          'weView - 是一个仿element-plus的组件库。weView - 是一个仿element-plus的组件库。',
       },
       {
         id: '5',
         name: '小柏',
         age: '20',
         remark:
-          'weView - 是 一 套 Vue 3.0 的 桌 面 端 组 件 库.weView - 是 一 套 Vue 3.0 的 桌 面 端 组 件 库.',
+          'weView - 是一个仿element-plus的组件库。weView - 是一个仿element-plus的组件库。',
       },
       {
         id: '6',
         name: '小吉',
         age: '20',
         remark:
-          'weView - 是 一 套 Vue 3.0 的 桌 面 端 组 件 库.weView - 是 一 套 Vue 3.0 的 桌 面 端 组 件 库.',
+          'weView - 是一个仿element-plus的组件库。weView - 是一个仿element-plus的组件库。',
       },
     ]
 
