@@ -1,8 +1,7 @@
 {
-  "name": "weview",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "weview-ui",
+  "version": "1.0.1",
+  "description": "这是一个基于vue3+js开发的组件库",
   "scripts": {
     "prepare": "husky install",
     "lint": "eslint --fix --ext .ts,.vue",
@@ -14,7 +13,6 @@
     "docs:serve": "vitepress serve docs",
     "build": "pnpm build:components",
     "build:all": "vite build",
-    "build:components": "esno ./scripts/build.ts",
     "coverage": "vitest run --coverage"
   },
   "keywords": [],
@@ -40,6 +38,7 @@
     "@vue/test-utils": "2.0.2",
     "c8": "^7.12.0",
     "eslint": "^8.32.0",
+    "esno": "^0.16.3",
     "happy-dom": "^8.4.4",
     "husky": "^8.0.3",
     "prettier": "^2.8.4",

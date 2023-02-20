@@ -25,7 +25,6 @@ const sidebar = {
     {
       text: 'Feedback 反馈组件',
       children: [
-        { text: 'Dialog 对话框', link: '/components/Dialog/' },
         { text: 'Notification 通知', link: '/components/Notification/' }
       ]
     },

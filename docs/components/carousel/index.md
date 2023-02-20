@@ -2,7 +2,9 @@
 
 ## 基础用法
 
-:::tip 基础的函数用法
+基础的函数用法
+
+:::tip 使用轮播图
 
 ```vue
 <template>
@@ -49,5 +51,3 @@ const result = [
 </script>
 <style lang="scss" scoped></style>
 ```
-
-注意：传入的参数必须为例子中的格式
