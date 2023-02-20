@@ -9,6 +9,7 @@ import Col from './Layout/src/col.vue';
 import Row from './Layout/src/row.vue'
 import Notification from './notification/Notification.vue'
 import { Dropdown, DropdownItem, DropdownMenu } from './Dropdown'
+import WVcarousel from './carousel/WV-carousel.vue'
 
 // 导出单独组件
 export { 
@@ -41,5 +42,6 @@ export default {
     app.component('WDropdown', Dropdown)
     app.component('WDropdownMenu', DropdownMenu)
     app.component('WDropdownItem', DropdownItem)
+    app.component("WVcarousel",WVcarousel);
   },
 }
