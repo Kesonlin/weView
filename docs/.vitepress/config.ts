@@ -38,7 +38,7 @@ const sidebar = {
     {
       text: 'Others 其他',
       children: [
-        { text: 'Rotationchart 轮播图', link: '/components/Rotationchart/' }
+        { text: 'carousel 轮播图', link: '/components/carousel/' }
       ]
     },
   ]

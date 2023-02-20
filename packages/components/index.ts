@@ -8,6 +8,7 @@ import Button from "./Button/src/Button.vue";
 import Col from './Layout/src/col.vue';
 import Row from './Layout/src/row.vue'
 import Notification from './notification/Notification.vue'
+import WVcarousel from './carousel/WV-carousel.vue'
 
 // 导出单独组件
 export { DateTimePicker, Input, Pagination, Button, Col, Row, Notification, WvTable, WvRadio }
@@ -23,6 +24,7 @@ export default {
     app.component('WButton', Button);
     app.component('WRow', Row);
     app.component('WCol', Col);
-    app.component(Notification.name, Notification)
+    app.component(Notification.name, Notification);
+    app.component("WVcarousel",WVcarousel);
   },
 }
