@@ -1,0 +1,27 @@
+name: CD
+on:
+  push:
+    branches: develop
+jobs:
+  cd:
+    name: doc cd
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: install node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 6.0.2
+      - name: install
+        run: pnpm install
+      - name: Build
+        run: pnpm run docs:build
+      - name: deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: docs/.vitepress/dist
