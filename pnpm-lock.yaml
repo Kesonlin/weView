@@ -21,9 +21,9 @@ importers:
       happy-dom: ^8.4.4
       husky: ^8.0.3
       mitt: ^3.0.0
-      prettier: ^2.8.3
+      prettier: ^2.8.4
       sass: ^1.57.1
-      typescript: ^4.9.4
+      typescript: ^4.9.5
       vite: ^4.0.4
       vitepress: 0.22.4
       vitepress-theme-demoblock: 1.4.2
@@ -82,27 +82,47 @@ importers:
   packages/components:
     specifiers:
       '@jridgewell/sourcemap-codec': ^1.4.14
+      '@popperjs/core': ^2.11.6
+      '@types/lodash-es': ^4.17.6
       '@vitejs/plugin-vue': ^4.0.0
       '@vitest/coverage-c8': ^0.28.4
       '@vue/compiler-dom': ^3.2.47
       '@vue/compiler-sfc': 3.2.47
       '@vue/test-utils': 2.0.2
       '@vueuse/core': ^9.12.0
+      '@weview/components': workspace:^1.0.0
+      '@weview/utils': workspace:^1.0.0
       happy-dom: ^8.4.4
       vite: ^4.0.4
       vue: 3.2.45
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.14
+      '@popperjs/core': 2.11.6
+      '@types/lodash-es': 4.17.6
       '@vitejs/plugin-vue': 4.0.0_vite@4.1.1+vue@3.2.45
       '@vue/compiler-dom': 3.2.47
       '@vue/compiler-sfc': 3.2.47
       '@vue/test-utils': 2.0.2_vue@3.2.45
       '@vueuse/core': 9.12.0_vue@3.2.45
+      '@weview/components': 'link:'
+      '@weview/utils': link:../utils
       happy-dom: 8.4.4
       vite: 4.1.1
       vue: 3.2.45
     devDependencies:
       '@vitest/coverage-c8': 0.28.5_happy-dom@8.4.4
+
+  packages/utils:
+    specifiers:
+      '@vue/shared': ^3.2.47
+      lodash: ^4.17.21
+      lodash-es: ^4.17.21
+      lodash-unified: ^1.0.3
+    dependencies:
+      '@vue/shared': 3.2.47
+      lodash: 4.17.21
+      lodash-es: 4.17.21
+      lodash-unified: 1.0.3_x2wgbdn67su72qcpoerjuvxru4
 
   play:
     specifiers: {}
@@ -1116,6 +1136,10 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
 
+  /@popperjs/core/2.11.6:
+    resolution: {integrity: sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==}
+    dev: false
+
   /@testing-library/dom/8.20.0:
     resolution: {integrity: sha512-d9ULIT+a4EXLX3UU8FBjauG9NnsZHkHztXoIcTsOKoOw030fyjheN9svkTULjJxtYag9DZz5Jz5qkWZDPxTFwA==}
     engines: {node: '>=12'}
@@ -1196,6 +1220,16 @@ packages:
   /@types/linkify-it/3.0.2:
     resolution: {integrity: sha512-HZQYqbiFVWufzCwexrvh694SOim8z2d+xJl5UNamcvQFejLY/2YUtzXHYi3cHdI7PMlS8ejH2slRAOJQ32aNbA==}
     dev: true
+
+  /@types/lodash-es/4.17.6:
+    resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==}
+    dependencies:
+      '@types/lodash': 4.14.191
+    dev: false
+
+  /@types/lodash/4.14.191:
+    resolution: {integrity: sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==}
+    dev: false
 
   /@types/markdown-it/12.2.3:
     resolution: {integrity: sha512-GKMHFfv3458yYy+v/N8gjufHO6MSZKCOXpZc5GXIWWy8uldwfmPn98vp81gZ5f9SVw8YYBctgfJ22a2d7AOMeQ==}
@@ -3626,6 +3660,21 @@ packages:
       p-locate: 5.0.0
     dev: true
 
+  /lodash-es/4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: false
+
+  /lodash-unified/1.0.3_x2wgbdn67su72qcpoerjuvxru4:
+    resolution: {integrity: sha512-WK9qSozxXOD7ZJQlpSqOT+om2ZfcT4yO+03FuzAHD0wF6S0l0090LRPDx3vhTTLZ8cFKpBn+IOcVXK6qOcIlfQ==}
+    peerDependencies:
+      '@types/lodash-es': '*'
+      lodash: '*'
+      lodash-es: '*'
+    dependencies:
+      lodash: 4.17.21
+      lodash-es: 4.17.21
+    dev: false
+
   /lodash.camelcase/4.3.0:
     resolution: {integrity: sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==}
     dev: true
@@ -3668,7 +3717,6 @@ packages:
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /log-symbols/4.1.0:
     resolution: {integrity: sha512-8XPvpAA8uyhfteu8pIvQxpJZ7SYYdpUivZpGy6sFsBuKRY/7rQGavedeB8aK+Zkyq6upMFVL/9AW6vOYzfRyLg==}

@@ -8,9 +8,23 @@ import Button from "./Button/src/Button.vue";
 import Col from './Layout/src/col.vue';
 import Row from './Layout/src/row.vue'
 import Notification from './notification/Notification.vue'
+import { Dropdown, DropdownItem, DropdownMenu } from './Dropdown'
 
 // 导出单独组件
-export { DateTimePicker, Input, Pagination, Button, Col, Row, Notification, WvTable, WvRadio }
+export { 
+  DateTimePicker, 
+  Input, 
+  Pagination, 
+  Button, 
+  Col, 
+  Row, 
+  Notification, 
+  WvTable, 
+  WvRadio, 
+  Dropdown,
+  DropdownMenu,
+  DropdownItem
+}
 // 编写一个插件，实现一个install方法
 
 export default {
@@ -24,5 +38,8 @@ export default {
     app.component('WRow', Row);
     app.component('WCol', Col);
     app.component(Notification.name, Notification)
+    app.component('WDropdown', Dropdown)
+    app.component('WDropdownMenu', DropdownMenu)
+    app.component('WDropdownItem', DropdownItem)
   },
 }
