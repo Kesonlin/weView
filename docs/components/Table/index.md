@@ -1856,7 +1856,7 @@ export default {
       />
       <i
         class="wv-icon wv-icon-close"
-        style="position: absolute;right:10px;"
+        style="position: absolute;right: 10px;cursor: pointer;"
         v-if="edingKeys.includes(data)"
         @click="deleteEdit(data)"
       ></i>
@@ -1864,7 +1864,7 @@ export default {
         {{ data.username }}
         <i
           class="wv-icon wv-icon-edit"
-          style="position: absolute;right: 10px;"
+          style="position: absolute;right: 10px;cursor: pointer;"
           v-if="!edingKeys.includes(data)"
           @click="editHandle(data)"
         ></i>
@@ -1959,10 +1959,7 @@ export default {
 
     const deleteEdit = (data) => {
       // console.log(edingKeys.value.includes(data))
-      edingKeys.value.splice(
-        edingKeys.value.findIndex((v) => v.id === data.id),
-        1
-      )
+      edingKeys.value.splice(edingKeys.value.indexOf(data), 1)
     }
 
     const changeUsername = (val, data) => {
@@ -2496,6 +2493,10 @@ export default {
   background: orangered;
   color: white;
   cursor: pointer;
+}
+.wv-table-view .wv-table-page {
+  box-sizing: content-box;
+  padding: 7px 0;
 }
 </style>
 ```
