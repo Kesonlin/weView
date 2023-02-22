@@ -1,6 +1,6 @@
 <template>
     <div :class="inputClass">
-        <input type="text" class="input" :value="modelValue" @input="updateValue"
+        <input type="text" :value="modelValue" @input="updateValue"
             :placeholder="placeholder" :disabled="disabled" :clearable="clearable"
             :maxlength="maxlength"
             />
@@ -30,12 +30,13 @@ const props = withDefaults(defineProps<Props>(),{
     showPassword: false
 })
 const emits = defineEmits(['update:modelValue'])
+
 function updateValue (event: Event){
     if(props.disabled) return;
     emits('update:modelValue', (event.target as HTMLInputElement).value)
 }
 
-const inputClass = computed(() => {
+const inputClass = computed<any[]>(() => {
     return [
         'input-primary',
         {
@@ -60,8 +61,8 @@ const restLength = computed(() => {
 
 onMounted(()=> {
     if (props.showPassword) {
-        const input: any = document.querySelector('.input-password')?.getElementsByTagName('input')[0];
-        input.setAttribute('type', 'password');
+        const input: any = document.querySelector('.input-password input')
+        input.setAttribute('type', 'password')
     }
 })
 
@@ -69,17 +70,29 @@ function clearInput(): void {
     emits('update:modelValue', '')
 }
 
-function togglePassword(): void {
-    const input: any = document.querySelector('.input-password')?.getElementsByTagName('input')[0];
-    const icon = document.querySelector('.input-password')?.querySelector('.password-icon');
-    if (input.getAttribute('type') == 'text') {
-        input.setAttribute('type', 'password');
-        if (icon) icon.innerHTML = "🙈"
-    } else{
-        input.setAttribute('type', 'text');
-        if (icon) icon.innerHTML = "🙊"
+function toggle(...actions: any): any{
+    return function(this: unknown, ...args: any) {
+        let action = actions.shift()
+        actions.push(action)
+
+        return action.apply(this, args)
     }
 }
+
+const togglePassword = toggle(
+    (evt: Event) => {
+
+        const input: any = document.querySelector('.input-password input')
+        input.setAttribute('type', 'text');
+        (evt.target as HTMLSpanElement).innerHTML = "🙊"
+    },
+    (evt: Event) => {
+        const input: any = document.querySelector('.input-password input')
+        input.setAttribute('type', 'password');
+        (evt.target as HTMLSpanElement).innerHTML = "🙈"
+        
+    }
+)
 </script>
 
 <style lang="scss" scoped>
