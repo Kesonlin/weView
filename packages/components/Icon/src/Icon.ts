@@ -1,6 +1,6 @@
 import type { ExtractPropTypes, PropType } from "vue";
 import type { IconNameType } from "./interface";
-import { isColor, isSize } from '@weview/utils/RegExp'
+import { isColor, isSize } from '../../../utils/RegExp'
 
 export const Props = {
     name: {

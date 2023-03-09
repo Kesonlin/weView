@@ -1,5 +1,5 @@
 import type { PropType, ExtractPropTypes, Prop } from "vue";
-import { isColor } from "@weview/utils/RegExp";
+import { isColor } from "../../../../utils/RegExp";
 
 export const Props = {
     mode: {

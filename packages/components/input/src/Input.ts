@@ -1,5 +1,5 @@
 import type { ExtractPropTypes, Prop, PropType } from "vue";
-import { isColor, isSize } from "@weview/utils/regExp";
+import { isColor, isSize } from '../../../utils/RegExp';
 export const Props = {
     modelValue: {
         type: String as PropType<string>,
