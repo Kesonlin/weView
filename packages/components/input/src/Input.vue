@@ -9,7 +9,11 @@
         <span v-show="maxlength" class="limit-tag">{{ restLength }}/{{ maxlength }}</span>
     </div>
 </template>
-
+<script lang="ts">
+export default {
+    name: 'WInput'
+}
+</script>
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { Props } from './Input'
@@ -79,6 +83,6 @@ function setInputState(type: string, icon: IconNameType): void {
 $font-size: v-bind('props.fontSize');
 $border-color: v-bind('props.activeColor');
 $width: v-bind('props.width');
-@import './input.scss';
+@import './Input.scss';
 </style>
 

@@ -1,6 +1,5 @@
 import { App } from 'vue'
 import DateTimePicker from './DatePicker/DateTimePicker/DateTimePicker.vue'
-import Input from './Input/src/Input.vue'
 import Icon from './Icon/index'
 import Pagination from './Pagination/index'
 import WvTable from './Table/index'
@@ -12,6 +11,7 @@ import Notification from './notification/Notification.vue'
 import { Dropdown, DropdownItem, DropdownMenu } from './Dropdown'
 import WVcarousel from './carousel/WV-carousel.vue'
 import { Menu, MenuItem, SubMenu, MenuItemGroup } from './Menu'
+import Input from './Input/src/Input.vue'
 // 导出单独组件
 export {
   DateTimePicker,
@@ -37,7 +37,7 @@ export {
 export default {
   install(app: App): void {
     app.component('DateTimePicker', DateTimePicker)
-    app.component('WInput', Input)
+    app.component(Input.name, Input)
     app.component(Icon.name, Icon)
     app.component('Pagination', Pagination)
     app.component('WvTable', WvTable)
