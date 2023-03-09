@@ -1,0 +1,41 @@
+$active-color: var(--active-color);
+$text-color: var(--text-color);
+
+.menu-item {
+    padding: 15px;
+
+    &:hover {
+        color: $active-color;
+    }
+}
+
+.horizontal-item {
+    &:hover {
+        background-color: #fafafa;
+    }
+}
+
+.vertical-item {
+    padding-right: 0;
+    padding-left: var(--padding-left);
+}
+
+.horizontal-active-item {
+    color: $active-color;
+    border-bottom: 1px solid $active-color;
+}
+
+.vertical-active-item {
+    background-color: #fafafa;
+    color: $active-color;
+    border-right: 1px solid $active-color;
+}
+
+.item-disabled {
+    color: #ddd;
+
+    &:hover {
+        color: #ddd;
+        cursor: no-drop;
+    }
+}

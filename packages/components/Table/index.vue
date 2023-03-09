@@ -67,11 +67,11 @@ const props = withDefaults(defineProps<TableProps>(), {
   rowStyle: '',
   cellStyle: '',
   defaultExpandAll: false,
-  spanMethod: () => {},
+  spanMethod: () => { },
   expandKeys: () => [],
   loading: false,
-  getCheckboxProps: () => {},
-  getRadioProps: () => {},
+  getCheckboxProps: () => { },
+  getRadioProps: () => { },
 })
 
 const emit = defineEmits(TableEmit)
@@ -99,18 +99,18 @@ const tableBodyColumns = ref<any[]>([])
  */
 const getLevel = (arr: any[]) => {
   let maxLevel = 0
-  ;(function callBack(arr, level) {
-    ++level
-    maxLevel = Math.max(level, maxLevel)
-    for (let i = 0; i < arr.length; i++) {
-      let item = arr[i]
-      if (item.children && item.children.length > 0) {
-        callBack(item.children, level)
-      } else {
-        delete item.children
+    ; (function callBack(arr, level) {
+      ++level
+      maxLevel = Math.max(level, maxLevel)
+      for (let i = 0; i < arr.length; i++) {
+        let item = arr[i]
+        if (item.children && item.children.length > 0) {
+          callBack(item.children, level)
+        } else {
+          delete item.children
+        }
       }
-    }
-  })(arr, 0)
+    })(arr, 0)
   return maxLevel
 }
 
@@ -461,11 +461,6 @@ onMounted(() => {
 
 const getFixedColumn = () => {
   tableHeader.value!.scrollLeft = tableBody.value?.scrollLeft || 0
-  // console.log(
-  //   tableBody.value?.scrollWidth,
-  //   tableBody.value?.clientWidth,
-  //   tableBody.value?.scrollLeft
-  // )
   // @ts-ignore
   if (tableBody.value?.scrollWidth >= tableBody.value?.clientWidth) {
     if (tableBody.value?.scrollLeft == 0) {
@@ -756,50 +751,27 @@ onBeforeUnmount(() => {
         </div>
         <div v-if="defaultToolbar" class="wv-table-tool-self">
           <!-- 筛选 -->
-          <wv-dropdown
-            v-if="showToolbar('filter')"
-            updateAtScroll
-            :style="toolbarStyle('filter')"
-          >
+          <wv-dropdown v-if="showToolbar('filter')" updateAtScroll :style="toolbarStyle('filter')">
             <div class="wv-inline" title="筛选" wv-event>
               <i class="wv-icon wv-icon-slider" />
             </div>
             <template #content>
               <div class="wv-table-tool-checkbox">
-                <wv-checkbox
-                  v-for="column in tableHeadColumns[0]"
-                  v-model="tableColumnKeys"
-                  skin="primary"
-                  :disabled="!!column.children"
-                  :key="column.key"
-                  :value="column.key"
-                  >{{ column.title }}</wv-checkbox
-                >
+                <wv-checkbox v-for="column in tableHeadColumns[0]" v-model="tableColumnKeys" skin="primary"
+                  :disabled="!!column.children" :key="column.key" :value="column.key">{{ column.title }}</wv-checkbox>
               </div>
             </template>
           </wv-dropdown>
 
           <!-- 导出 -->
-          <div
-            v-if="showToolbar('export')"
-            class="wv-inline"
-            title="导出"
-            wv-event
-            :style="toolbarStyle('export')"
-            @click="exportData()"
-          >
+          <div v-if="showToolbar('export')" class="wv-inline" title="导出" wv-event :style="toolbarStyle('export')"
+            @click="exportData()">
             <i class="wv-icon wv-icon-export" />
           </div>
 
           <!-- 打印 -->
-          <div
-            v-if="showToolbar('print')"
-            :style="toolbarStyle('print')"
-            class="wv-inline"
-            title="打印"
-            wv-event
-            @click="print()"
-          >
+          <div v-if="showToolbar('print')" :style="toolbarStyle('print')" class="wv-inline" title="打印" wv-event
+            @click="print()">
             <i class="wv-icon wv-icon-print" />
           </div>
         </div>
@@ -814,42 +786,24 @@ onBeforeUnmount(() => {
         <div class="wv-table-header">
           <!-- :style="[{ 'padding-right': `${scrollWidthCell}px` }]" -->
           <div class="wv-table-header-wrapper" ref="tableHeader">
-            <table
-              class="wv-table"
-              :wv-size="size"
-              :wv-skin="skin"
-              ref="tableHeaderTable"
-            >
+            <table class="wv-table" :wv-size="size" :wv-skin="skin" ref="tableHeaderTable">
               <colgroup>
                 <template v-for="column in tableBodyColumns" :key="column">
                   <template v-if="tableColumnKeys.includes(column.key)">
-                    <col
-                      :width="column.width"
-                      :style="{
-                        minWidth: column.minWidth ? column.minWidth : '50px',
-                      }"
-                    />
+                    <col :width="column.width" :style="{
+                      minWidth: column.minWidth ? column.minWidth : '50px',
+                    }" />
                   </template>
                 </template>
               </colgroup>
               <thead>
-                <template
-                  v-for="(
-                    tableHeadColumn, tableHeadColumnIndex
-                  ) in tableHeadColumns"
-                  :key="tableHeadColumnIndex"
-                >
+                <template v-for="(
+                      tableHeadColumn, tableHeadColumnIndex
+                    ) in tableHeadColumns" :key="tableHeadColumnIndex">
                   <tr>
-                    <template
-                      v-for="(column, columnIndex) in tableHeadColumn"
-                      :key="column"
-                    >
-                      <th
-                        v-if="tableColumnKeys.includes(column.key)"
-                        :colspan="column.colspan"
-                        :rowspan="column.rowspan"
-                        class="wv-table-cell"
-                        :class="[
+                    <template v-for="(column, columnIndex) in tableHeadColumn" :key="column">
+                      <th v-if="tableColumnKeys.includes(column.key)" :colspan="column.colspan" :rowspan="column.rowspan"
+                        class="wv-table-cell" :class="[
                           renderFixedClassName(column, columnIndex),
                           column.fixed ? `wv-table-fixed-${column.fixed}` : '',
                           column.type == 'checkbox'
@@ -857,28 +811,21 @@ onBeforeUnmount(() => {
                             : '',
                           column.type == 'radio' ? 'wv-table-cell-radio' : '',
                           column.type == 'number' ? 'wv-table-cell-number' : '',
-                        ]"
-                        :style="[
-                          {
-                            textAlign: column.align,
-                          },
-                          renderHeadFixedStyle(
-                            column,
-                            columnIndex,
-                            tableHeadColumn,
-                            tableHeadColumnIndex,
-                            tableHeadColumns
-                          ),
-                        ]"
-                      >
+                        ]" :style="[
+  {
+    textAlign: column.align,
+  },
+  renderHeadFixedStyle(
+    column,
+    columnIndex,
+    tableHeadColumn,
+    tableHeadColumnIndex,
+    tableHeadColumns
+  ),
+]">
                         <template v-if="column.type == 'checkbox'">
-                          <wv-checkbox
-                            v-model="hasChecked"
-                            :is-indeterminate="!allChecked"
-                            skin="primary"
-                            value="all"
-                            @change="changeAll"
-                          />
+                          <wv-checkbox v-model="hasChecked" :is-indeterminate="!allChecked" skin="primary" value="all"
+                            @change="changeAll" />
                         </template>
                         <template v-else>
                           <span>
@@ -890,23 +837,12 @@ onBeforeUnmount(() => {
                             </template>
                           </span>
                           <!-- 插槽 -->
-                          <span
-                            v-if="column.sort"
-                            class="wv-table-sort wv-inline"
-                            wv-sort
-                          >
-                            <i
-                              @click.stop="sortTable($event, column.key, 'asc')"
-                              class="wv-edge wv-table-sort-asc"
-                              title="升序"
-                            />
-                            <i
-                              @click.stop="
-                                sortTable($event, column.key, 'desc')
-                              "
-                              class="wv-edge wv-table-sort-desc"
-                              title="降序"
-                            />
+                          <span v-if="column.sort" class="wv-table-sort wv-inline" wv-sort>
+                            <i @click.stop="sortTable($event, column.key, 'asc')" class="wv-edge wv-table-sort-asc"
+                              title="升序" />
+                            <i @click.stop="
+                              sortTable($event, column.key, 'desc')
+                            " class="wv-edge wv-table-sort-desc" title="降序" />
                           </span>
                         </template>
                       </th>
@@ -918,120 +854,60 @@ onBeforeUnmount(() => {
           </div>
         </div>
         <!-- 表身 -->
-        <div
-          class="wv-table-body wv-table-main"
-          :style="{ height: height, maxHeight: maxHeight }"
-          ref="tableBody"
-        >
-          <table
-            class="wv-table"
-            v-if="tableDataSource.length > 0 && loading == false"
-            :class="{ 'wv-table-even': props.even }"
-            :wv-size="size"
-            :wv-skin="skin"
-          >
+        <div class="wv-table-body wv-table-main" :style="{ height: height, maxHeight: maxHeight }" ref="tableBody">
+          <table class="wv-table" v-if="tableDataSource.length > 0 && loading == false"
+            :class="{ 'wv-table-even': props.even }" :wv-size="size" :wv-skin="skin">
             <colgroup>
-              <template
-                v-for="(column, columnIndex) in tableBodyColumns"
-                :key="columnIndex"
-              >
+              <template v-for="(column, columnIndex) in tableBodyColumns" :key="columnIndex">
                 <template v-if="tableColumnKeys.includes(column.key)">
-                  <col
-                    :width="column.width"
-                    :style="{
-                      minWidth: column.minWidth ? column.minWidth : '50px',
-                    }"
-                  />
+                  <col :width="column.width" :style="{
+                    minWidth: column.minWidth ? column.minWidth : '50px',
+                  }" />
                 </template>
               </template>
             </colgroup>
             <tbody>
               <!-- 渲染 -->
-              <template
-                v-for="(children, index) in tableDataSource"
-                :key="index"
-              >
-                <table-row
-                  :id="id"
-                  :index="index"
-                  :data="children"
-                  :page="page"
-                  :columns="tableBodyColumns"
-                  :columnSlotNames="columnSlotNames"
-                  :indent-size="indentSize"
-                  :currentIndentSize="currentIndentSize"
-                  :tableColumnKeys="tableColumnKeys"
-                  :expandSpace="childrenExpandSpace"
-                  :expandIndex="expandIndex"
-                  :cellStyle="cellStyle"
-                  :cellClassName="cellClassName"
-                  :rowStyle="rowStyle"
-                  :rowClassName="rowClassName"
-                  :spanMethod="spanMethod"
-                  :defaultExpandAll="defaultExpandAll"
-                  :getCheckboxProps="getCheckboxProps"
-                  :getRadioProps="getRadioProps"
-                  v-model:expandKeys="tableExpandKeys"
-                  v-model:selectedKeys="tableSelectedKeys"
-                  v-model:selectedKey="tableSelectedKey"
-                  @row="rowClick"
-                  @row-double="rowDoubleClick"
-                  @row-contextmenu="rowContextmenu"
-                >
-                  <template
-                    v-for="name in columnSlotNames"
-                    #[name]="slotProp: {
-                      data: any,
-                      column: any,
-                      row: any,
-                      rowIndex: number,
-                      columnIndex: number,
-                    }"
-                  >
-                    <slot
-                      :name="name"
-                      :row="slotProp.data"
-                      :data="slotProp.data"
-                      :column="slotProp.column"
-                      :rowIndex="slotProp.rowIndex"
-                      :columnIndex="slotProp.columnIndex"
-                    />
+              <template v-for="(children, index) in tableDataSource" :key="index">
+                <table-row :id="id" :index="index" :data="children" :page="page" :columns="tableBodyColumns"
+                  :columnSlotNames="columnSlotNames" :indent-size="indentSize" :currentIndentSize="currentIndentSize"
+                  :tableColumnKeys="tableColumnKeys" :expandSpace="childrenExpandSpace" :expandIndex="expandIndex"
+                  :cellStyle="cellStyle" :cellClassName="cellClassName" :rowStyle="rowStyle" :rowClassName="rowClassName"
+                  :spanMethod="spanMethod" :defaultExpandAll="defaultExpandAll" :getCheckboxProps="getCheckboxProps"
+                  :getRadioProps="getRadioProps" v-model:expandKeys="tableExpandKeys"
+                  v-model:selectedKeys="tableSelectedKeys" v-model:selectedKey="tableSelectedKey" @row="rowClick"
+                  @row-double="rowDoubleClick" @row-contextmenu="rowContextmenu">
+                  <template v-for="name in columnSlotNames" #[name]="slotProp: {
+                    data: any,
+                    column: any,
+                    row: any,
+                    rowIndex: number,
+                    columnIndex: number,
+                  }">
+                    <slot :name="name" :row="slotProp.data" :data="slotProp.data" :column="slotProp.column"
+                      :rowIndex="slotProp.rowIndex" :columnIndex="slotProp.columnIndex" />
                   </template>
-                  <template
-                    v-if="slot.expand"
-                    #expand="slotProp: { data: any, row: any }"
-                  >
-                    <slot
-                      name="expand"
-                      :data="slotProp.data"
-                      :row="slotProp.row"
-                    />
+                  <template v-if="slot.expand" #expand="slotProp: { data: any, row: any }">
+                    <slot name="expand" :data="slotProp.data" :row="slotProp.row" />
                   </template>
                 </table-row>
               </template>
               <tr v-if="hasTotalRow" class="wv-table-total">
-                <template
-                  v-for="(column, columnIndex) in columns"
-                  :key="columnIndex"
-                >
+                <template v-for="(column, columnIndex) in columns" :key="columnIndex">
                   <template v-if="tableColumnKeys.includes(column.key)">
-                    <td
-                      :style="[
-                        {
-                          textAlign: column.align,
-                          whiteSpace: column.ellipsisTooltip
-                            ? 'nowrap'
-                            : 'normal',
-                        },
-                        renderFixedStyle(column, columnIndex),
-                      ]"
-                      :class="[
-                        'wv-table-cell',
-                        renderFixedClassName(column, columnIndex),
-                        column.fixed ? `wv-table-fixed-${column.fixed}` : '',
-                      ]"
-                      v-html="renderTotalRowCell(column)"
-                    />
+                    <td :style="[
+                      {
+                        textAlign: column.align,
+                        whiteSpace: column.ellipsisTooltip
+                          ? 'nowrap'
+                          : 'normal',
+                      },
+                      renderFixedStyle(column, columnIndex),
+                    ]" :class="[
+  'wv-table-cell',
+  renderFixedClassName(column, columnIndex),
+  column.fixed ? `wv-table-fixed-${column.fixed}` : '',
+]" v-html="renderTotalRowCell(column)" />
                   </template>
                 </template>
               </tr>
@@ -1043,9 +919,7 @@ onBeforeUnmount(() => {
           </template>
           <template v-if="loading == true">
             <div class="wv-table-loading">
-              <i
-                class="wv-icon-loading wv-icon wv-anim wv-anim-rotate wv-anim-loop"
-              />
+              <i class="wv-icon-loading wv-icon wv-anim wv-anim-rotate wv-anim-loop" />
             </div>
           </template>
         </div>
@@ -1054,20 +928,9 @@ onBeforeUnmount(() => {
         </div>
       </div>
       <div v-if="page && page.total > 0" class="wv-table-page">
-        <table-page
-          :total="page.total"
-          :pages="page.pages"
-          :theme="page.theme"
-          :limits="page.limits"
-          :showSkip="page.showSkip"
-          :show-page="page.showPage"
-          :showRefresh="page.showRefresh"
-          :showLimit="page.showLimit"
-          :showCount="page.showCount"
-          v-model:current="page.current"
-          v-model:limit="page.limit"
-          @change="change"
-        />
+        <table-page :total="page.total" :pages="page.pages" :theme="page.theme" :limits="page.limits"
+          :showSkip="page.showSkip" :show-page="page.showPage" :showRefresh="page.showRefresh" :showLimit="page.showLimit"
+          :showCount="page.showCount" v-model:current="page.current" v-model:limit="page.limit" @change="change" />
       </div>
     </div>
   </div>

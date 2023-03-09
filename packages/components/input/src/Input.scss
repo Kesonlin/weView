@@ -1,25 +1,30 @@
-// 颜色变量
-$--color-primary: #409EFF;
-$--color-white: #FFFFFF;
-$--color-font: #505050;
 $common-border: 1px solid #d3d3d3;
+$color-font: #505050;
+
+@mixin icon-style {
+    top: 50%;
+    right: calc($font-size * 0.5);
+    transform: translateY(-50%);
+    font-size: $font-size;
+}
 
 .input-primary {
     display: inline-block;
 
     input {
         box-sizing: border-box;
-        width: 100%;
-        padding: 6px 8px;
+        width: $width;
+        padding: calc($font-size * 0.4) calc($font-size * 0.5);
         border: $common-border;
         line-height: 1;
-        font-size: 14px;
+        font-size: $font-size;
         outline: none;
-        color: $--color-font;
-        border-radius: 5px;
+        color: $color-font;
+        border-radius: calc($font-size * 0.4);
 
         &:focus {
-            border-color: #409EFF;
+            border-color: $border-color;
+
         }
     }
 }
@@ -37,9 +42,7 @@ $common-border: 1px solid #d3d3d3;
 
     .clear-icon {
         position: absolute;
-        top: 7px;
-        right: 10px;
-        font-size: 12px;
+        @include icon-style;
         opacity: 0.5;
 
         &:hover {
@@ -50,12 +53,12 @@ $common-border: 1px solid #d3d3d3;
 
 .input-password {
     position: relative;
+    color: transparent;
+    white-space: nowrap;
 
     .password-icon {
         position: absolute;
-        top: 6px;
-        right: 5px;
-        font-size: 12px;
+        @include icon-style;
         opacity: 0.8;
         user-select: none;
 
@@ -71,9 +74,7 @@ $common-border: 1px solid #d3d3d3;
 
     .limit-tag {
         position: absolute;
-        top: 6px;
-        right: 5px;
-        font-size: 12px;
+        @include icon-style;
         opacity: 0.8;
         user-select: none;
 

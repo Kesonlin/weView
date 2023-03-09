@@ -1953,12 +1953,10 @@ export default {
     ])
 
     const editHandle = (data) => {
-      // console.log(data)
       edingKeys.value.push(data)
     }
 
     const deleteEdit = (data) => {
-      // console.log(edingKeys.value.includes(data))
       edingKeys.value.splice(edingKeys.value.indexOf(data), 1)
     }
 

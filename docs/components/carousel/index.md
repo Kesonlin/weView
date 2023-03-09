@@ -10,8 +10,10 @@
 <template>
   <WVcarousel :sliders="result"></WVcarousel>
 </template>
-<script lang="ts" setup>
-const result = [
+<script lang="ts">
+export default {
+  setup() {
+      const result = [
   {
     id: '16',
     imgUrl:
@@ -48,6 +50,12 @@ const result = [
     type: '1',
   },
 ]
+    return {
+      result
+    }
+  }
+}
+
 </script>
 <style lang="scss" scoped></style>
 ```

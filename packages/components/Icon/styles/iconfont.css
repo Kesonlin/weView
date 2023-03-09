@@ -1,0 +1,167 @@
+@font-face {
+    font-family: "iconfont";
+    /* Project id 3924440 */
+    src: url('./iconfont.woff2?t=1677660001455') format('woff2'),
+        url('./iconfont.woff?t=1677660001455') format('woff'),
+        url('./iconfont.ttf?t=1677660001455') format('truetype');
+}
+
+[class*='icon-'] {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-view:before {
+    content: "\e633";
+}
+
+.icon-view-off:before {
+    content: "\e634";
+}
+
+.icon-message:before {
+    content: "\e635";
+}
+
+.icon-message-unread:before {
+    content: "\e636";
+}
+
+.icon-record:before {
+    content: "\e637";
+}
+
+.icon-time:before {
+    content: "\e638";
+}
+
+.icon-search:before {
+    content: "\e63c";
+}
+
+.icon-edit:before {
+    content: "\e63d";
+}
+
+.icon-link:before {
+    content: "\e63e";
+}
+
+.icon-share:before {
+    content: "\e63f";
+}
+
+.icon-setting:before {
+    content: "\e640";
+}
+
+.icon-upload:before {
+    content: "\e641";
+}
+
+.icon-download:before {
+    content: "\e642";
+}
+
+.icon-play:before {
+    content: "\e643";
+}
+
+.icon-region:before {
+    content: "\e644";
+}
+
+.icon-discount:before {
+    content: "\e645";
+}
+
+.icon-notification:before {
+    content: "\e646";
+}
+
+.icon-notification-off:before {
+    content: "\e647";
+}
+
+.icon-image:before {
+    content: "\e64a";
+}
+
+.icon-email:before {
+    content: "\e64b";
+}
+
+.icon-list:before {
+    content: "\e64f";
+}
+
+.icon-refresh:before {
+    content: "\e650";
+}
+
+.icon-check:before {
+    content: "\e651";
+}
+
+.icon-close:before {
+    content: "\e652";
+}
+
+.icon-forbidden:before {
+    content: "\e653";
+}
+
+.icon-info:before {
+    content: "\e654";
+}
+
+.icon-help:before {
+    content: "\e655";
+}
+
+.icon-caution:before {
+    content: "\e656";
+}
+
+.icon-like:before {
+    content: "\e657";
+}
+
+.icon-star:before {
+    content: "\e658";
+}
+
+.icon-arrow-up:before {
+    content: "\e659";
+}
+
+.icon-arrow-left:before {
+    content: "\e65a";
+}
+
+.icon-arrow-down:before {
+    content: "\e65b";
+}
+
+.icon-arrow-right:before {
+    content: "\e65c";
+}
+
+.icon-page-first:before {
+    content: "\e65d";
+}
+
+.icon-down-to-bottom:before {
+    content: "\e65e";
+}
+
+.icon-up-to-top:before {
+    content: "\e65f";
+}
+
+.icon-page-last:before {
+    content: "\e660";
+}

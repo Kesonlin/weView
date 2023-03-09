@@ -12,7 +12,6 @@ import { POPPER_INJECTION_KEY } from './tokens'
 const triggerElem = ref()
 const props = defineProps(popperTriggerProps)
 const { triggerRef } = inject(POPPER_INJECTION_KEY, undefined)!
-console.log(useAttrs())
 onMounted(() => {
   triggerRef.value = unref(triggerElem)
 
@@ -20,7 +19,7 @@ onMounted(() => {
   watch(
     () => props.targetRef,
     (newTarget) => {
-      if(newTarget) {
+      if (newTarget) {
         triggerRef.value = unrefElement(newTarget as HTMLElement)
       }
     },

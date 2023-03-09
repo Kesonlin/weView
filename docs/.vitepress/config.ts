@@ -6,6 +6,7 @@ const sidebar = {
       children: [
         { text: 'Button 按钮', link: '/components/Button/' },
         { text: 'Layout 布局', link: '/components/Layout/' },
+        { text: 'Icon 图标', link: '/components/Icon/' },
       ]
     },
     {
@@ -31,6 +32,7 @@ const sidebar = {
     {
       text: 'Navigation 导航',
       children: [
+        { text: 'Menu 导航菜单', link: '/components/Menu/' },
         { text: 'Dropdown 下拉菜单', link: '/components/Dropdown/' }
       ]
     },

@@ -1,0 +1,41 @@
+$active-color: var(--active-color);
+$text-color: var(--text-color);
+
+* {
+    // 清除默认样式
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+
+    :deep(li) {
+        list-style-type: none;
+        text-align: left;
+        user-select: none;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+}
+
+.menu {
+    display: flex;
+    color: $text-color;
+}
+
+.menu-horizontal {
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.menu-vertical {
+    flex-flow: column nowrap;
+    display: inline-block;
+    min-width: 180px;
+    min-height: 300px;
+    border-right: 1px solid #EEEEEE;
+}

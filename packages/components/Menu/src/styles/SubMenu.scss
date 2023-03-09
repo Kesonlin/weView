@@ -1,0 +1,118 @@
+$active-color: var(--active-color);
+$text-color: var(--text-color);
+
+//水平子菜单
+.sub-menu.horizontal-item {
+    position: relative;
+
+    //标题
+    span {
+        display: inline-block;
+        padding: 15px;
+
+        &:hover {
+            color: $active-color;
+            opacity: 0.999;
+            transition: opacity 0.35s;
+        }
+    }
+
+    //子菜单列表
+    .sub-ul {
+        position: absolute;
+        top: 100%;
+        left: -1%;
+        background-color: #fff;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    //一级以下子菜单列表，默认设置在父列表右边
+    .sub-ul.sub-level {
+        left: 100%;
+    }
+
+}
+
+//为激活的MenuItem的父级水平子菜单项，设置激活底部边框
+.horizontal-item.horizontal-active-sub {
+    border-bottom: 1px solid $active-color;
+
+}
+
+//为一级以下的水平激活子菜单项设置激活样式
+.sub-ul {
+    .horizontal-active-sub {
+        border-bottom: none;
+
+        >span {
+            color: $active-color;
+        }
+    }
+
+}
+
+//为激活的MenuItem的父级垂直子菜单
+.sub-menu.vertical-item.vertical-active-sub {
+
+    //标题设置激活颜色
+    >span {
+        color: $active-color;
+    }
+
+    //为展开的垂直子菜单父级标题，设置默认字体颜色
+    >.vertical-sub-open {
+        color: $text-color;
+    }
+}
+
+
+
+.sub-menu.vertical-item {
+    position: relative;
+
+    span {
+        display: inline-block;
+        width: calc(100% - var(--padding-left));
+        padding: 15px 0 15px var(--padding-left);
+        line-height: 1;
+
+        &:hover {
+            color: $active-color;
+        }
+    }
+
+    .arrow {
+        position: absolute;
+        right: 10px;
+    }
+}
+
+.sub-menu.sub-disabled {
+    color: #ddd;
+    border-bottom: none;
+
+    >span {
+        &:hover {
+            color: #ddd;
+            cursor: no-drop;
+        }
+    }
+}
+
+
+
+.vertical-fade-enter-active {
+    transition: opacity 0.3s ease;
+}
+
+.vertical-fade-leave-active {
+    transition: opacity 0.2s ease;
+}
+
+.vertical-fade-enter-from,
+.vertical-fade-leave-to {
+    opacity: 0;
+}

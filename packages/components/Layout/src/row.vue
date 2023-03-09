@@ -31,7 +31,6 @@ export default defineComponent({
         provide('Row', {
             gutter,
         })
-        console.log(gutter.value)
         const style = computed(() => {
             let ret = {
                 marginLeft: '',
@@ -41,7 +40,6 @@ export default defineComponent({
                 ret.marginLeft = `-${props.gutter / 2}px`
                 ret.marginRight = ret.marginLeft
             }
-            console.log(ret)
             return ret
         })
         return () =>

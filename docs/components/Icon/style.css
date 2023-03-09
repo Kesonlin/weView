@@ -1,0 +1,27 @@
+.dib-box {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: space-between;
+    width: 40rem;
+    height: 30rem;
+}
+
+.dib {
+    margin-bottom: 1rem;
+    margin-right: 2.5rem;
+    width: 3rem;
+}
+
+.dib:hover {
+    color: #8648D3;
+}
+
+.icon-name {
+    margin: 0;
+    text-align: center;
+}
+
+.icon-name:hover {
+    color: rgba(0, 0, 0, 0.85)
+}

@@ -12,7 +12,7 @@
 - Vitest 实现单元测试
 - Eslint + Prettier + Husky 语法检查
 - 采用 vite 构建
-- Vitepress + Vercel 文档网站搭建
+- Vitepress 文档网站搭建
 
 ## install
 
@@ -20,6 +20,4 @@
   npm i weView
 ```
 
-## Quick Start
 
-希望尽快上手 weView，可以浏览：文档链接
