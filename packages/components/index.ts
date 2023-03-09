@@ -11,7 +11,7 @@ import Notification from './notification/Notification.vue'
 import { Dropdown, DropdownItem, DropdownMenu } from './Dropdown'
 import WVcarousel from './carousel/WV-carousel.vue'
 import { Menu, MenuItem, SubMenu, MenuItemGroup } from './Menu'
-import Input from './Input/src/Input.vue'
+import Input from './input/src/Input.vue'
 // 导出单独组件
 export {
   DateTimePicker,

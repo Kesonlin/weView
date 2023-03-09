@@ -1,4 +1,4 @@
-import Input from '../src/Input.vue'
+import input from '../src/Input.vue'
 export const InputDemo: VueElement = function (template: string) {
     return {
         components: { Input },

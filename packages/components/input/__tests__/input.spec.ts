@@ -1,6 +1,6 @@
 /// <reference types="vitest"/>
 // @vitest-environment happy-dom
-import Input from '../src/Input.vue'
+import Input from '../src/input.vue'
 import { InputDemo } from './InputDemo'
 import { mount } from '@vue/test-utils'
 import { describe, expect, test } from 'vitest'
